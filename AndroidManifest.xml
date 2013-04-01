@@ -231,6 +231,17 @@
             </intent-filter>
         </activity>
 
+        <!-- SoftKeys -->
+        <activity
+            android:name=".fragments.SoftKeyOptions"
+            android:label="@string/title_softkey">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="com.revolt.control.SHORTCUT"/>
+            </intent-filter>
+        </activity>
+
         <!-- vibration manager -->
         <activity
             android:name=".fragments.Vibrations"

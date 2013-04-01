@@ -148,6 +148,13 @@
         android:summary="@string/header_summary_sound" />
 
     <header
+        android:id="@+id/softkey"
+        android:fragment="com.revolt.control.fragments.SoftKeyOptions"
+        android:title="@string/softkey_options"
+        android:icon="@drawable/ic_revolt_softkey"
+        android:summary="@string/header_summary_softkey" />
+
+    <header
         android:id="@+id/vibrations"
         android:title="@string/vibrations"
         android:summary="@string/header_summary_vibrations"

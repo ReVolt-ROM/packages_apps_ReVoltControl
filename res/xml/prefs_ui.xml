@@ -174,24 +174,4 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="misc"
-        android:title="@string/misc_short">
-
-        <CheckBoxPreference
-            android:key="longpress_to_kill"
-            android:title="@string/longpress_to_kill"
-            android:summary="@string/longpress_to_kill_summary" />
-
-        <PreferenceScreen
-           android:key="font_size"
-           android:title="@string/font_size_title"
-           android:summary="@string/font_size_summary">
-           <intent android:action="android.intent.action.MAIN"
-                   android:targetPackage="com.WhiteLight.FontSizeFree"
-                   android:targetClass="com.WhiteLight.FontSizeFree.FontSize" />
-        </PreferenceScreen>
-
-    </PreferenceCategory>
-
 </PreferenceScreen>
