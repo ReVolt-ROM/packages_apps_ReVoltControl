@@ -1,0 +1,137 @@
+package com.revolt.control.fragments;
+
+import android.os.Bundle;
+import android.preference.CheckBoxPreference;
+import android.preference.ListPreference;
+import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.PreferenceScreen;
+import android.provider.Settings;
+import com.revolt.control.ReVoltPreferenceFragment;
+import com.revolt.control.R;
+import com.revolt.control.util.Helpers;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
+public class StatusBarSignal extends ReVoltPreferenceFragment implements
+        OnPreferenceChangeListener {
+
+    private static final String STATUS_BAR_TRAFFIC = "status_bar_traffic";
+
+    ListPreference mDbmStyletyle;
+    ListPreference mWifiStyle;
+    ColorPickerPreference mColorPicker;
+    ColorPickerPreference mWifiColorPicker;
+    CheckBoxPreference mHideSignal;
+    CheckBoxPreference mAltSignal;
+
+    private CheckBoxPreference mStatusBarTraffic;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setTitle(R.string.title_statusbar_signal);
+        // Load the preferences from an XML resource
+        addPreferencesFromResource(R.xml.prefs_statusbar_signal);
+
+        PreferenceScreen prefs = getPreferenceScreen();
+
+        mStatusBarTraffic = (CheckBoxPreference) prefs.findPreference(STATUS_BAR_TRAFFIC);
+
+        mDbmStyletyle = (ListPreference) findPreference("signal_style");
+        mDbmStyletyle.setOnPreferenceChangeListener(this);
+        mDbmStyletyle.setValue(Integer.toString(Settings.System.getInt(mContentRes,
+                Settings.System.STATUSBAR_SIGNAL_TEXT, 0)));
+
+        mColorPicker = (ColorPickerPreference) findPreference("signal_color");
+        mColorPicker.setOnPreferenceChangeListener(this);
+
+        mWifiStyle = (ListPreference) findPreference("wifi_signal_style");
+        mWifiStyle.setOnPreferenceChangeListener(this);
+        mWifiStyle.setValue(Integer.toString(Settings.System.getInt(mContentRes,
+                Settings.System.STATUSBAR_WIFI_SIGNAL_TEXT, 0)));
+
+        mWifiColorPicker = (ColorPickerPreference) findPreference("wifi_signal_color");
+        mWifiColorPicker.setOnPreferenceChangeListener(this);
+
+        mHideSignal = (CheckBoxPreference) findPreference("hide_signal");
+        mHideSignal.setChecked(Settings.System.getBoolean(mContentRes,
+                Settings.System.STATUSBAR_HIDE_SIGNAL_BARS, false));
+
+        mAltSignal = (CheckBoxPreference) findPreference("alt_signal");
+        mAltSignal.setChecked(Settings.System.getBoolean(mContentRes,
+                Settings.System.STATUSBAR_SIGNAL_CLUSTER_ALT, false));
+
+        mStatusBarTraffic.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.STATUS_BAR_TRAFFIC, 1) == 1));
+
+        if (Integer.parseInt(mDbmStyletyle.getValue()) == 0) {
+            mColorPicker.setEnabled(false);
+        }
+
+        if (Integer.parseInt(mWifiStyle.getValue()) == 0) {
+            mWifiColorPicker.setEnabled(false);
+        }
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
+                                         Preference preference) {
+        boolean value;
+        if (preference == mHideSignal) {
+            Settings.System.putBoolean(mContentRes,
+                    Settings.System.STATUSBAR_HIDE_SIGNAL_BARS, mHideSignal.isChecked());
+
+            return true;
+        } else if (preference == mAltSignal) {
+            Settings.System.putBoolean(mContentRes,
+                    Settings.System.STATUSBAR_SIGNAL_CLUSTER_ALT, mAltSignal.isChecked());
+            return true;
+         } else if (preference == mStatusBarTraffic) {
+             value = mStatusBarTraffic.isChecked();
+             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                     Settings.System.STATUS_BAR_TRAFFIC, value ? 1 : 0);
+            return true;
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mDbmStyletyle) {
+
+            int val = Integer.parseInt((String) newValue);
+            Settings.System.putInt(mContentRes,
+                    Settings.System.STATUSBAR_SIGNAL_TEXT, val);
+            mColorPicker.setEnabled(val == 0 ? false : true);
+            Helpers.restartSystemUI();
+            return true;
+        } else if (preference == mColorPicker) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
+                    .valueOf(newValue)));
+            preference.setSummary(hex);
+
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(mContentRes,
+                    Settings.System.STATUSBAR_SIGNAL_TEXT_COLOR, intHex);
+            return true;
+        } else if (preference == mWifiStyle) {
+
+            int val = Integer.parseInt((String) newValue);
+            Settings.System.putInt(mContentRes,
+                    Settings.System.STATUSBAR_WIFI_SIGNAL_TEXT, val);
+            mWifiColorPicker.setEnabled(val == 0 ? false : true);
+            Helpers.restartSystemUI();
+            return true;
+        } else if (preference == mWifiColorPicker) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
+                    .valueOf(newValue)));
+            preference.setSummary(hex);
+
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(mContentRes,
+                    Settings.System.STATUSBAR_WIFI_SIGNAL_TEXT_COLOR, intHex);
+            return true;
+        }
+        return false;
+    }
+}

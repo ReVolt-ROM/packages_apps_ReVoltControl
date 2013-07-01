@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="@string/about_rv_settings_title"
+	xmlns:revolt="http://schemas.android.com/apk/res/com.revolt.control">
+
+    <PreferenceCategory
+        android:key="links"
+        android:title="@string/revolt">
+
+        <Preference
+            android:key="revolt_site"
+            android:title="@string/revolt_site_title"
+            android:summary="@string/revolt_site_summary"/>
+
+        <com.revolt.control.widgets.DeveloperPreference
+            android:title="ReVolt"
+            revolt:nameDev="ReVolt"
+            revolt:twitterHandle="ReVoltROM"
+            revolt:githubLink="@string/github_revolt"
+            revolt:donateLink="@string/donate_johnhany97"
+            revolt:emailDev="johnhany97@gmail.com"/>
+
+   </PreferenceCategory>
+
+   <PreferenceCategory
+       android:key="devs"
+       android:title="@string/devs">
+
+       <com.revolt.control.widgets.DeveloperPreference
+           android:title="John Hany"
+           revolt:nameDev="Johnhany97"
+           revolt:twitterHandle="jhany97"
+           revolt:githubLink="@string/github_johnhany97" 
+           revolt:emailDev="johnhany97@gmail.com"/>
+
+       <com.revolt.control.widgets.DeveloperPreference
+           android:title="Torsten Krause"
+           revolt:nameDev="TPoint75"
+           revolt:twitterHandle="TorstenKrause"
+           revolt:githubLink="@string/github_tpoint75" 
+           revolt:emailDev="tpoint75@gmail.com"/>
+
+   </PreferenceCategory>
+
+   <PreferenceCategory
+       android:key="maintainers"
+       android:title="@string/maintainers">
+
+       <com.revolt.control.widgets.DeveloperPreference
+           android:title="Hamzeh Alabdalla"
+           revolt:nameDev="Hazedabeast"
+           revolt:twitterHandle="hazedabeast" 
+           revolt:githubLink="@string/github_hazed"
+           revolt:emailDev="hazedabeast@gmail.com"/>
+
+       <com.revolt.control.widgets.DeveloperPreference
+           android:title="Akshat Shenoy"
+           revolt:nameDev="RedDevil"
+           revolt:twitterHandle="akshatshenoy" 
+           revolt:githubLink="@string/github_reddevil"
+           revolt:emailDev="red-devil@gmail.com"/>
+
+   </PreferenceCategory>    
+
+   <PreferenceCategory
+       android:key="support"
+       android:title="@string/support_team">
+
+       <com.revolt.control.widgets.DeveloperPreference
+           android:title="Björn Nilsson"
+           revolt:nameDev="TheWierd"
+           revolt:twitterHandle="ReVoltROM"
+           revolt:emailDev="thewierd2@gmail.com"/>
+
+       <com.revolt.control.widgets.DeveloperPreference
+           android:title="Hypnautikz"
+           revolt:nameDev="Ryan C."
+           revolt:twitterHandle="Verana_ryan"
+           revolt:emailDev="johnhany97@gmail.com"/>
+
+   </PreferenceCategory>         
+
+   <PreferenceCategory
+       android:key="contributors"
+       android:title="@string/contributors_title">
+
+       <com.revolt.control.widgets.DeveloperPreference
+           android:title="AOKP"
+           revolt:nameDev="AOKP"
+           revolt:twitterHandle="aokp_rom"
+           revolt:donateLink="@string/donate_aokp"
+           revolt:githubLink="@string/github_aokp"
+           revolt:emailDev="aokp@aokp.co"/>
+
+       <com.revolt.control.widgets.DeveloperPreference
+           android:title="CyanogenMod"
+           revolt:nameDev="CyanogenMod"
+           revolt:twitterHandle="cyanogenmod"
+           revolt:donateLink="@string/donate_cyanogenmod"
+           revolt:githubLink="@string/github_cyanogenmod"
+           revolt:emailDev="cyanogenmod@cyanogenmod.org"/>
+
+   </PreferenceCategory>
+
+</PreferenceScreen>
