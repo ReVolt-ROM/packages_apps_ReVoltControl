@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2007 The Android Open Source Project
+	 Copyright (C) 2012 The CyanogenMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,20 +15,16 @@
      limitations under the License.
 -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              android:gravity="center_vertical">
+<resources>
+    <color name="black">#000</color>
+    <color name="red">#F00</color>
 
-    <com.revolt.control.widgets.TouchInterceptor
-        android:id="@android:id/list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:textSize="18sp"
-        android:textColor="#000000"
-        android:drawSelectorOnTop="false"
-        android:fastScrollEnabled="true" />
+    <color name="divider_color">#20ffffff</color>
+    <color name="title_color">@android:color/holo_blue_light</color>
+    <color name="setup_divider_color">#333333</color>
+    <color name="dragndrop_background">#e0103010</color>
 
-</LinearLayout>
+    <color name="extension_list_item_color">#ff000000</color>
+    <color name="configure_light_background">#00000000</color>
+
+</resources>

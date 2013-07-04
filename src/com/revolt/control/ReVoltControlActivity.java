@@ -10,7 +10,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
+import android.preference.PreferenceDrawerActivity;
 import android.preference.PreferenceFragment;
 import android.text.TextUtils;
 import android.util.Log;
@@ -33,7 +33,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-public class ReVoltControlActivity extends PreferenceActivity implements ButtonBarHandler {
+public class ReVoltControlActivity extends PreferenceDrawerActivity implements ButtonBarHandler {
 
     private static final String TAG = "ReVolt_Control";
 
@@ -325,7 +325,7 @@ public class ReVoltControlActivity extends PreferenceActivity implements ButtonB
             }
         }
 
-        // Ignore the adapter provided by PreferenceActivity and substitute ours
+        // Ignore the adapter provided by PreferenceDrawerActivity and substitute ours
         // instead
         super.setListAdapter(new HeaderAdapter(this, mHeaders));
     }
