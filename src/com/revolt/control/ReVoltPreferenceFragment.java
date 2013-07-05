@@ -16,7 +16,6 @@
 
 package com.revolt.control;
 
-import android.app.ActionBar;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.Fragment;
@@ -48,8 +47,6 @@ public class ReVoltPreferenceFragment extends PreferenceFragment implements Dial
     protected Context mContext;
 
     private SettingsDialogFragment mDialogFragment;
-    protected ActionBar mActionBar;
-    protected boolean mShortcutFragment;
     protected boolean hasTorch;
     protected boolean hasHardwareButtons;
     protected boolean hasFastCharge;
@@ -65,14 +62,7 @@ public class ReVoltPreferenceFragment extends PreferenceFragment implements Dial
         hasFastCharge = getResources().getBoolean(R.bool.has_fast_charge);
         hasColorTuning = getResources().getBoolean(R.bool.has_color_tuning);
         mContext = getActivity();
-        mActionBar = getActivity().getActionBar();
         mContentRes = getActivity().getContentResolver();
-        if (getArguments() != null) {
-            mShortcutFragment = getArguments().getBoolean("started_from_shortcut", false);
-        }
-        if (!mShortcutFragment) {
-            mActionBar.setDisplayHomeAsUpEnabled(true);
-        }
 
         Vibrator mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         if (mVibrator != null && mVibrator.hasVibrator()) {

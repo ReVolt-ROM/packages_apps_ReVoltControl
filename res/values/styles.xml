@@ -16,7 +16,7 @@
 
 <resources>
 
-     <style name="Theme.CreateShortCut" parent="android:Theme.Holo.DialogWhenLarge" />
+    <style name="Theme.CreateShortCut" parent="android:Theme.Holo.DialogWhenLarge" />
     <style name="Settings" parent="android:Theme.Holo.Light.DarkActionBar" />
 
     <style name="VibButton" parent="android:Widget.ActionButton">
