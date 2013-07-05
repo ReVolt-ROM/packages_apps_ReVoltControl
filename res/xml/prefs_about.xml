@@ -39,7 +39,7 @@
            revolt:nameDev="TPoint75"
            revolt:twitterHandle="TorstenKrause"
            revolt:githubLink="@string/github_tpoint75" 
-           revolt:emailDev="tpoint75@gmail.com"/>
+           revolt:emailDev="tpoint75@googlemail.com"/>
 
    </PreferenceCategory>
 
@@ -52,14 +52,14 @@
            revolt:nameDev="Hazedabeast"
            revolt:twitterHandle="hazedabeast" 
            revolt:githubLink="@string/github_hazed"
-           revolt:emailDev="hazedabeast@gmail.com"/>
+           revolt:emailDev="hamzehalabdalla@gmail.com"/>
 
        <com.revolt.control.widgets.DeveloperPreference
            android:title="Akshat Shenoy"
            revolt:nameDev="RedDevil"
            revolt:twitterHandle="akshatshenoy" 
            revolt:githubLink="@string/github_reddevil"
-           revolt:emailDev="red-devil@gmail.com"/>
+           revolt:emailDev="akshat.shenoy@gmail.com"/>
 
    </PreferenceCategory>    
 
@@ -71,7 +71,7 @@
            android:title="Björn Nilsson"
            revolt:nameDev="TheWierd"
            revolt:twitterHandle="ReVoltROM"
-           revolt:emailDev="thewierd2@gmail.com"/>
+           revolt:emailDev="thewierd@gmail.com"/>
 
        <com.revolt.control.widgets.DeveloperPreference
            android:title="Hypnautikz"
