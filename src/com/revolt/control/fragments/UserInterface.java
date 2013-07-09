@@ -86,6 +86,7 @@ public class UserInterface extends ReVoltPreferenceFragment implements OnPrefere
     private static final CharSequence PREF_LONGPRESS_TO_KILL = "longpress_to_kill";
     private static final CharSequence PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final CharSequence PREF_RAM_USAGE_BAR = "ram_usage_bar";
+    private static final CharSequence PREF_RAM_USAGE_CIRCLE = "recents_ram_circle";
     private static final CharSequence PREF_IME_SWITCHER = "ime_switcher";
     private static final CharSequence PREF_STATUSBAR_BRIGHTNESS = "statusbar_brightness_slider";
     private static final CharSequence PREF_USER_MODE_UI = "user_mode_ui";
@@ -131,6 +132,7 @@ public class UserInterface extends ReVoltPreferenceFragment implements OnPrefere
     AlertDialog mCustomBootAnimationDialog;
     ListPreference mUserModeUI;
     CheckBoxPreference mHideExtras;
+    CheckBoxPreference mRamCircle;
     CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
     CheckBoxPreference mDualpane;
     ListPreference mCrtMode;
@@ -224,6 +226,10 @@ public class UserInterface extends ReVoltPreferenceFragment implements OnPrefere
         mRamBar = (CheckBoxPreference) findPreference(PREF_RAM_USAGE_BAR);
         mRamBar.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.RAM_USAGE_BAR, false));
+
+        mRamCircle = (CheckBoxPreference) findPreference(PREF_RAM_USAGE_CIRCLE);
+        mRamCircle.setChecked(Settings.System.getBoolean(mContentResolver,
+                Settings.System.RECENTS_RAM_CIRCLE, false));
 
         mHideExtras = (CheckBoxPreference) findPreference(PREF_HIDE_EXTRAS);
         mHideExtras.setChecked(Settings.System.getBoolean(mContentResolver,
@@ -514,6 +520,11 @@ public class UserInterface extends ReVoltPreferenceFragment implements OnPrefere
             boolean checked = ((TwoStatePreference) preference).isChecked();
             Settings.System.putBoolean(mContentResolver,
                     Settings.System.RAM_USAGE_BAR, checked);
+            return true;
+        } else if (preference == mRamCircle) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.RECENTS_RAM_CIRCLE,
+                    ((CheckBoxPreference) preference).isChecked());
             return true;
         } else if (preference == mWakeUpWhenPluggedOrUnplugged) {
             Settings.System.putBoolean(mContentResolver,

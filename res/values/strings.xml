@@ -208,6 +208,8 @@
     <string name="recent_kill_all_summary">Displays a button that kills all apps in the Recent Apps window</string>
     <string name="ram_bar">Recents RAM bar</string>
     <string name="ram_bar_summary">Shows RAM usage in the Recent Apps window</string>
+    <string name="circle_ram_title">Recents RAM circle</string>
+    <string name="circle_ram_summary">Adds a circular meter surrounding the clear recents button</string>
     <string name="longpress_to_kill">Hardware Back-to-kill</string>
     <string name="longpress_to_kill_summary">Holding the hardware Back button will kill the activity in the foreground
     </string>

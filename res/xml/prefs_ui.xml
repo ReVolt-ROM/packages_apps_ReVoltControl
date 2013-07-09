@@ -148,6 +148,12 @@
             android:title="@string/ram_bar"
             android:summary="@string/ram_bar_summary" />
 
+        <CheckBoxPreference
+            android:key="recents_ram_circle"
+            android:title= "@string/circle_ram_title"
+            android:summary= "@string/circle_ram_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
