@@ -744,6 +744,8 @@
     </string>
     <string name="lockscreen_battery_title">Lockscreen battery percentage</string>
     <string name="lockscreen_battery_summary">Always show battery percentage on the lockscreen</string>
+    <string name="lockscreen_music_controls_title">Music controls</string>
+    <string name="lockscreen_music_controls_summary">Show player controls while music is playing</string>
     <string name="lockscreen_hide_initial_page_hints_title">Hide initial page hints</string>
     <string name="lockscreen_hide_initial_page_hints_summary">Set whether the hints for the left and right widgets are
         shown when the screen is turned on.

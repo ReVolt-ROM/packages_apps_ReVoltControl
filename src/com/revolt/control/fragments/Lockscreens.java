@@ -91,6 +91,7 @@ public class Lockscreens extends ReVoltPreferenceFragment implements
     private Switch mLockBatterySwitch;
     private Switch mLockRotateSwitch;
     private Switch mLockVolControlSwitch;
+    private Switch mLockMusicControlSwitch;
     private Switch mLockVolWakeSwitch;
     private Switch mLockPageHintSwitch;
     private Switch mLockMinimizeChallangeSwitch;
@@ -105,6 +106,7 @@ public class Lockscreens extends ReVoltPreferenceFragment implements
     private TextView mLockBatteryText;
     private TextView mLockRotateText;
     private TextView mLockVolControlText;
+    private TextView mLockMusicControlText;
     private TextView mLockVolWakeText;
     private TextView mLockPageHintText;
     private TextView mLockMinimizeChallangeText;
@@ -282,6 +284,21 @@ public class Lockscreens extends ReVoltPreferenceFragment implements
                     }
                 });
 
+        mLockMusicControlText = ((TextView) getActivity().findViewById(
+                R.id.lockscreen_music_controls_id));
+        mLockMusicControlText.setOnClickListener(mLockMusicControlTextListener);
+        mLockMusicControlSwitch = (Switch) getActivity().findViewById(
+                R.id.lockscreen_music_controls_switch);
+        mLockMusicControlSwitch
+                .setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton v, boolean checked) {
+                        Settings.System.putBoolean(cr, Settings.System.LOCKSCREEN_MUSIC_CONTROLS,
+                                checked);
+                        updateSwitches();
+                    }
+                });
+
         mLockVolWakeText = ((TextView) getActivity().findViewById(R.id.lockscreen_vol_wake_id));
         mLockVolWakeText.setOnClickListener(mLockVolWakeTextListener);
         mLockVolWakeSwitch = (Switch) getActivity().findViewById(R.id.lockscreen_vol_wake_switch);
@@ -450,6 +467,14 @@ public class Lockscreens extends ReVoltPreferenceFragment implements
         }
     };
 
+    private TextView.OnClickListener mLockMusicControlTextListener = new TextView.OnClickListener() {
+        public void onClick(View v) {
+            createMessage(
+                    getResources().getString(R.string.lockscreen_music_controls_title),
+                    getResources().getString(R.string.lockscreen_music_controls_summary));
+        }
+    };
+
     private TextView.OnClickListener mLockVolWakeTextListener = new TextView.OnClickListener() {
         public void onClick(View v) {
             createMessage(
@@ -513,6 +538,8 @@ public class Lockscreens extends ReVoltPreferenceFragment implements
                 Settings.System.LOCKSCREEN_AUTO_ROTATE, false));
         mLockVolControlSwitch.setChecked(Settings.System.getBoolean(cr,
                 Settings.System.VOLUME_MUSIC_CONTROLS, false));
+        mLockMusicControlSwitch.setChecked(Settings.System.getBoolean(cr,
+                Settings.System.LOCKSCREEN_MUSIC_CONTROLS, false));
         mLockVolWakeSwitch.setChecked(Settings.System.getBoolean(cr,
                 Settings.System.VOLUME_WAKE_SCREEN, false));
         mLockAllWidgetsSwitch.setChecked(Settings.System.getBoolean(cr,
