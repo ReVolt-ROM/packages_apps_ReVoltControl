@@ -53,6 +53,7 @@ public class ReVoltPreferenceFragment extends PreferenceFragment implements Dial
     protected boolean hasColorTuning;
     protected boolean hasVibration = false;
     protected ContentResolver mContentRes;
+    protected ContentResolver mContentAppRes;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,6 +64,7 @@ public class ReVoltPreferenceFragment extends PreferenceFragment implements Dial
         hasColorTuning = getResources().getBoolean(R.bool.has_color_tuning);
         mContext = getActivity();
         mContentRes = getActivity().getContentResolver();
+        mContentAppRes = mContext.getContentResolver();
 
         Vibrator mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         if (mVibrator != null && mVibrator.hasVibrator()) {
