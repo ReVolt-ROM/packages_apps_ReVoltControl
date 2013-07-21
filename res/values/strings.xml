@@ -550,8 +550,6 @@
     <string name="navigation_bar_menu_arrow_keys_summary">Checking this enables arrow keys in the Navigation Bar while
         typing
     </string>
-    <string name="statusbar_hide_title">Hide Statusbar</string>
-    <string name="statusbar_hide_summary">Checking this completely hides the Statusbar</string>
     <string name="navigation_bar_alpha_title">Statusbar and Navigation Bar opacity</string>
     <string name="navbar_hide_enable_title">Hidden NavBar Enable</string>
     <string name="systembar_hide_enable_title">Hidden SystemBar Enable</string>
@@ -1287,4 +1285,15 @@
     <string name="lowercase">Lowercase</string>
     <string name="uppercase">Uppercase</string>
     <string name="custom_java_format">Custom Java Format</string>
+
+    <!-- Hidden StatusBar PullDown -->
+    <string name="statusbar_behaviour">Statusbar Behaviour</string>
+    <string name="statusbar_visible">Show Statusbar</string>
+    <string name="statusbar_hide_title">Hide Statusbar</string>
+    <string name="statusbar_hide_summary">Choose from 3 different statusbar behaviour</string>
+    <string name="statusbar_notification">Notifications</string>
+    <string name="statusbar_pulldown">Pulldown Statusbar</string>
+    <string name="statusbar_pulldown_notification">Pulldown &amp; Notifications</string>
+    <string name="hidden_statusbar_pulldown_timeout_title">Hidden Statusbar Pulldown Timeout</string>
+    <string name="hidden_statusbar_pulldown_timeout_summary">Timeout for Hidden Statusbar window</string>
 </resources>
