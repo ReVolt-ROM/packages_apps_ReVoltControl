@@ -34,6 +34,7 @@ import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.util.ExtendedPropertiesUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
@@ -923,14 +924,14 @@ public class RibbonTargets extends ReVoltPreferenceFragment implements
                 com.android.internal.R.bool.config_showNavigationBar);
         boolean navBarAutoHide = Settings.System.getBoolean(mContentRes,
                 Settings.System.NAV_HIDE_ENABLE, false);
-        boolean navBarEnabled = Settings.System.getBoolean(mContentRes,
-                Settings.System.NAVIGATION_BAR_SHOW, false);
+        boolean navbarZero = Integer.parseInt(ExtendedPropertiesUtils.getProperty(
+                    "com.android.systemui.navbar.dpi", "100")) == 0;
         switch (arrayNum) {
             case 5:
                 mMenuRearrange.setTitle(getResources().getString(R.string.menu_ribbon_rearrange));
                 mMenuReset.setTitle(getResources().getString(R.string.menu_ribbon_reset));
                 mMenuToggles.setTitle(getResources().getString(R.string.menu_ribbon_na));
-                if (hasNavBarByDefault || navBarEnabled || navBarAutoHide) {
+                if (!navbarZero) {
                     mEnableBottomWarning.setVisibility(View.VISIBLE);
                     if (navBarAutoHide) {
                         mEnableBottomWarning.setText(R.string.ribbon_bottom_warning_hiding);
