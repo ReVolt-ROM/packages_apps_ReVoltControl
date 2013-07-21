@@ -1,5 +1,5 @@
 
-package com.aokp.romcontrol.fragments;
+package com.revolt.control.fragments;
 
 import android.os.Bundle;
 import android.preference.Preference;
@@ -8,12 +8,12 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 
-import com.aokp.romcontrol.R;
-import com.aokp.romcontrol.AOKPPreferenceFragment;
+import com.revolt.control.R;
+import com.revolt.control.ReVoltPreferenceFragment;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-public class RandomColors extends AOKPPreferenceFragment implements
+public class RandomColors extends ReVoltPreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String PREF_RANDOM_COLOR_ONE = "color_one";
