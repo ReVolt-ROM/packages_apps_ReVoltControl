@@ -71,7 +71,7 @@
            android:title="Björn Nilsson"
            revolt:nameDev="TheWierd"
            revolt:twitterHandle="ReVoltROM"
-           revolt:emailDev="thewierd@gmail.com"/>
+           revolt:emailDev="thewierd2@gmail.com"/>
 
        <com.revolt.control.widgets.DeveloperPreference
            android:title="Hypnautikz"
