@@ -60,6 +60,13 @@
            revolt:twitterHandle="akshatshenoy" 
            revolt:githubLink="@string/github_reddevil"
            revolt:emailDev="akshat.shenoy@gmail.com"/>
+           
+       <com.revolt.control.widgets.DeveloperPreference
+           android:title="Tim Pohlad-Thomas"
+           revolt:nameDev="timpohladthomas"
+           revolt:twitterHandle="timpohladthomas" 
+           revolt:githubLink="@string/github_timpohladthomas"
+           revolt:emailDev="timpohladthomas@gmail.com"/>
 
    </PreferenceCategory>    
 
