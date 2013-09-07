@@ -267,8 +267,8 @@ public class UserInterface extends ReVoltPreferenceFragment implements OnPrefere
         mCrtMode = (ListPreference) findPreference(PREF_POWER_CRT_MODE);
         int crtMode = Settings.System.getInt(mContentResolver,
                 Settings.System.SYSTEM_POWER_CRT_MODE, 0);
-        mCrtMode.setValue(Integer.toString(Settings.System.getInt(mContentResolver,
-                Settings.System.SYSTEM_POWER_CRT_MODE, crtMode)));
+        mCrtMode.setValueIndex(crtMode);
+        mCrtMode.setSummary(mCrtMode.getEntries()[crtMode]);
         mCrtMode.setOnPreferenceChangeListener(this);
 
         mWakeUpWhenPluggedOrUnplugged =
