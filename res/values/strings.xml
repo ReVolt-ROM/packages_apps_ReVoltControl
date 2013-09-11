@@ -1340,4 +1340,10 @@
     <string name="summary_animation_no_override">Prevent apps from overriding transitions.</string>
     <string name="animation_duration_default">Default</string>
 
+    <!-- Breathing Notifications -->
+    <string name="sms_breath">Breathing SMS</string>
+    <string name="sms_breath_summary">Will give your sms notifications a breathing effect in the statusbar.</string>
+    <string name="missed_call_breath">Breathing Missed Call</string>
+    <string name="missed_call_breath_summary">Will give your missed call notifications a breathing effect on the statusbar.</string>
+
 </resources>

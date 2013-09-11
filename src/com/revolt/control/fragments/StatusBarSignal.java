@@ -15,16 +15,15 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 public class StatusBarSignal extends ReVoltPreferenceFragment implements
         OnPreferenceChangeListener {
 
-    private static final String STATUS_BAR_TRAFFIC = "status_bar_traffic";
-
     ListPreference mDbmStyletyle;
     ListPreference mWifiStyle;
     ColorPickerPreference mColorPicker;
     ColorPickerPreference mWifiColorPicker;
     CheckBoxPreference mHideSignal;
     CheckBoxPreference mAltSignal;
-
-    private CheckBoxPreference mStatusBarTraffic;
+    CheckBoxPreference mStatusBarTraffic;
+    CheckBoxPreference mSMSBreath;
+    CheckBoxPreference mMissedCallBreath;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,8 +33,6 @@ public class StatusBarSignal extends ReVoltPreferenceFragment implements
         addPreferencesFromResource(R.xml.prefs_statusbar_signal);
 
         PreferenceScreen prefs = getPreferenceScreen();
-
-        mStatusBarTraffic = (CheckBoxPreference) prefs.findPreference(STATUS_BAR_TRAFFIC);
 
         mDbmStyletyle = (ListPreference) findPreference("signal_style");
         mDbmStyletyle.setOnPreferenceChangeListener(this);
@@ -61,8 +58,17 @@ public class StatusBarSignal extends ReVoltPreferenceFragment implements
         mAltSignal.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.STATUSBAR_SIGNAL_CLUSTER_ALT, false));
 
-        mStatusBarTraffic.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.STATUS_BAR_TRAFFIC, 1) == 1));
+        mStatusBarTraffic = (CheckBoxPreference) findPreference("status_bar_traffic");
+        mStatusBarTraffic.setChecked(Settings.System.getBoolean(mContentRes,
+                Settings.System.STATUS_BAR_TRAFFIC, false));
+
+        mSMSBreath = (CheckBoxPreference) findPreference("pref_key_sms_breath");
+        mSMSBreath.setChecked(Settings.System.getBoolean(mContentRes,
+                Settings.System.SMS_BREATH, false));
+
+        mMissedCallBreath = (CheckBoxPreference) findPreference("missed_call_breath");
+        mMissedCallBreath.setChecked(Settings.System.getBoolean(mContentRes,
+                Settings.System.MISSED_CALL_BREATH, false));
 
         if (Integer.parseInt(mDbmStyletyle.getValue()) == 0) {
             mColorPicker.setEnabled(false);
@@ -76,7 +82,6 @@ public class StatusBarSignal extends ReVoltPreferenceFragment implements
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
                                          Preference preference) {
-        boolean value;
         if (preference == mHideSignal) {
             Settings.System.putBoolean(mContentRes,
                     Settings.System.STATUSBAR_HIDE_SIGNAL_BARS, mHideSignal.isChecked());
@@ -87,10 +92,17 @@ public class StatusBarSignal extends ReVoltPreferenceFragment implements
                     Settings.System.STATUSBAR_SIGNAL_CLUSTER_ALT, mAltSignal.isChecked());
             return true;
          } else if (preference == mStatusBarTraffic) {
-             value = mStatusBarTraffic.isChecked();
-             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                     Settings.System.STATUS_BAR_TRAFFIC, value ? 1 : 0);
+             Settings.System.putBoolean(mContentRes,
+                    Settings.System.STATUS_BAR_TRAFFIC, mStatusBarTraffic.isChecked());
             return true;
+         } else if (preference == mSMSBreath) {
+             Settings.System.putBoolean(mContentRes,
+                    Settings.System.SMS_BREATH, mSMSBreath.isChecked());
+           return true;
+         } else if (preference == mMissedCallBreath) {
+             Settings.System.putBoolean(mContentRes,
+                    Settings.System.MISSED_CALL_BREATH, mMissedCallBreath.isChecked());
+           return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
