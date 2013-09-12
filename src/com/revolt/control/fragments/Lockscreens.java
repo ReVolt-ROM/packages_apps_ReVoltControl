@@ -98,6 +98,7 @@ public class Lockscreens extends ReVoltPreferenceFragment implements
     private Switch mLockCarouselSwitch;
     private Switch mLockAllWidgetsSwitch;
     private Switch mLockUnlimitedWidgetsSwitch;
+    private Switch mLockSeeThroughSwitch;
     private Button mLockTextColorButton;
 
     private TextView mGlowTorchText;
@@ -112,6 +113,7 @@ public class Lockscreens extends ReVoltPreferenceFragment implements
     private TextView mLockMinimizeChallangeText;
     private TextView mLockCarouselText;
     private TextView mLockAllWidgetsText;
+    private TextView mLockSeeThroughText;
     private TextView mLockUnlimitedWidgetsText;
 
     private ShortcutPickerHelper mPicker;
@@ -370,6 +372,21 @@ public class Lockscreens extends ReVoltPreferenceFragment implements
                     }
                 });
 
+        mLockSeeThroughText = ((TextView) getActivity().findViewById(
+                R.id.lockscreen_seethrough_id));
+        mLockSeeThroughText.setOnClickListener(mLockSeeThroughTextListener);
+        mLockSeeThroughSwitch = (Switch) getActivity().findViewById(
+                R.id.lockscreen_seethrough_switch);
+        mLockSeeThroughSwitch
+                .setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton v, boolean checked) {
+                        Settings.System.putBoolean(cr,
+                                Settings.System.LOCKSCREEN_SEE_THROUGH, checked);
+                        updateSwitches();
+                    }
+                });
+
         if (isSW600DPScreen(mContext)) {
             Settings.System.putBoolean(cr,
                     Settings.System.LOCKSCREEN_MINIMIZE_LOCKSCREEN_CHALLENGE, false);
@@ -529,6 +546,14 @@ public class Lockscreens extends ReVoltPreferenceFragment implements
         }
     };
 
+    private TextView.OnClickListener mLockSeeThroughTextListener = new TextView.OnClickListener() {
+        public void onClick(View v) {
+            createMessage(
+                    getResources().getString(R.string.lockscreen_seethrough_title),
+                    getResources().getString(R.string.lockscreen_seethrough_summary));
+        }
+    };
+
     private void updateSwitches() {
         mGlowTorchSwitch.setSelection(Settings.System.getInt(cr,
                 Settings.System.LOCKSCREEN_GLOW_TORCH, 0));
@@ -552,6 +577,9 @@ public class Lockscreens extends ReVoltPreferenceFragment implements
                 Settings.System.LOCKSCREEN_MINIMIZE_LOCKSCREEN_CHALLENGE, false));
         mLockCarouselSwitch.setChecked(Settings.System.getBoolean(cr,
                 Settings.System.LOCKSCREEN_USE_WIDGET_CONTAINER_CAROUSEL, false));
+        mLockSeeThroughSwitch.setChecked(Settings.System.getBoolean(cr,
+                Settings.System.LOCKSCREEN_SEE_THROUGH, false));
+
     }
 
 

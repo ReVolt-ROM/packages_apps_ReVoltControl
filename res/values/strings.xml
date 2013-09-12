@@ -797,6 +797,9 @@
     </string>
     <string name="lockscreen_stock_music_layout_title">Stock music layout</string>
     <string name="lockscreen_stock_music_layout_summary">Use the stock layout when playing music.</string>
+    <string name="lockscreen_seethrough_title">Lockscreen See through</string>
+    <string name="lockscreen_seethrough_summary">Allows you to see your homescreen behind the lock screen including apps.</string>
+
     <string name="lockscreen_wallpaper_title">Choose lockscreen wallpaper</string>
     <string name="lockscreen_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
     <string name="lockscreen_text_color_title">Lockscreen text color</string>
