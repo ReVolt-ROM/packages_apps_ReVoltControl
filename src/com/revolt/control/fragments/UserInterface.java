@@ -155,6 +155,7 @@ public class UserInterface extends ReVoltPreferenceFragment implements OnPrefere
     private static int mLastRandomInsultIndex = -1;
     private String[] mInsults;
 
+    private int mUiMode;
     private int mSeekbarProgress;
     String mCustomLabelText = null;
     int mUserRotationAngles = -1;
@@ -298,16 +299,21 @@ public class UserInterface extends ReVoltPreferenceFragment implements OnPrefere
         mListViewInterpolator.setSummary(mListViewInterpolator.getEntry());
         mListViewInterpolator.setOnPreferenceChangeListener(this);
 
-        if (isTabletUI(mContext)) {
+        mUiMode = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.CURRENT_UI_MODE, 0);
+
+        if (mUiMode == 1) {
             mStatusbarSliderPreference.setEnabled(false);
             mHideStatusBar.setEnabled(false);
             mNotificationWallpaper.setEnabled(false);
-            mWallpaperAlpha.setEnabled(false);
-        } else {
+            mStatusbarSliderPreference.setSummary(R.string.enable_phone_or_phablet);
+            mHideStatusBar.setSummary(R.string.enable_phone_or_phablet);
+            mNotificationWallpaper.setSummary(R.string.enable_phone_or_phablet);
+         } else {
             mHideExtras.setEnabled(false);
+            mHideExtras.setSummary(R.string.enable_tablet_ui); 
         }
 
-        resetBootAnimation();
         findWallpaperStatus();
     }
 
@@ -324,6 +330,7 @@ public class UserInterface extends ReVoltPreferenceFragment implements OnPrefere
                 mDisableBootAnimation.setSummary(null);
             }
         }
+        resetBootAnimation();
     }
 
     /**
@@ -344,6 +351,9 @@ public class UserInterface extends ReVoltPreferenceFragment implements OnPrefere
             mBootAnimationPath = "";
         }
         mCustomBootAnimation.setEnabled(!mDisableBootAnimation.isChecked());
+        mCustomBootAnimation.setSummary(mDisableBootAnimation.isChecked()
+                ? R.string.enable_bootanimation_unlock
+                : R.string.custom_bootanimation_summary);
         return bootAnimationExists;
     }
 
@@ -564,7 +574,13 @@ public class UserInterface extends ReVoltPreferenceFragment implements OnPrefere
 
     public void findWallpaperStatus() {
         File wallpaper = new File(mContext.getFilesDir(), WALLPAPER_NAME);
-        mWallpaperAlpha.setEnabled(wallpaper.exists() ? true : false);
+        if (mUiMode != 1 && wallpaper.exists()) {
+            mWallpaperAlpha.setEnabled(true);
+            mWallpaperAlpha.setSummary(null);
+        } else {
+            mWallpaperAlpha.setEnabled(false);
+            mWallpaperAlpha.setSummary(R.string.enable_noti_wallpaper);
+        }
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

@@ -212,6 +212,7 @@ public class Navbar extends ReVoltPreferenceFragment implements
 
         if (Integer.parseInt(menuDisplayLocation.getValue()) == 4) {
             mNavBarMenuDisplay.setEnabled(false);
+            mNavBarMenuDisplay.setSummary(R.string.enable_menu_location);
         }
 
         refreshSettings();
@@ -335,6 +336,8 @@ public class Navbar extends ReVoltPreferenceFragment implements
                     Settings.System.MENU_LOCATION, val);
             refreshSettings();
             mNavBarMenuDisplay.setEnabled(val < 4 ? true : false);
+            mNavBarMenuDisplay.setSummary(val == 4 ? R.string.enable_menu_location
+                    : R.string.summary_pref_navigation_menu_display);
             return true;
         } else if (preference == mNavBarMenuDisplay) {
             Settings.System.putInt(mContentRes,
@@ -435,6 +438,15 @@ public class Navbar extends ReVoltPreferenceFragment implements
         mDragHandleOpacity.setEnabled(mNavBarHideEnable.isChecked());
         mDragHandleWidth.setEnabled(mNavBarHideEnable.isChecked());
         mNavBarHideTimeout.setEnabled(mNavBarHideEnable.isChecked());
+        if (isTabletUI(mContext)) {
+            mNavBarHideTimeout.setSummary(mNavBarHideEnable.isChecked()
+                     ? R.string.summary_systembar_timeout
+                     : R.string.enable_hiding_systembar);
+        } else {
+            mNavBarHideTimeout.setSummary(mNavBarHideEnable.isChecked()
+                     ? R.string.summary_navbar_timeout
+                     : R.string.enable_hiding_navbar);
+        }
     }
 
     private Uri getTempFileUri() {

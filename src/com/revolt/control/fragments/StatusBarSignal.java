@@ -72,10 +72,12 @@ public class StatusBarSignal extends ReVoltPreferenceFragment implements
 
         if (Integer.parseInt(mDbmStyletyle.getValue()) == 0) {
             mColorPicker.setEnabled(false);
+            mColorPicker.setSummary(R.string.enable_signal_text);
         }
 
         if (Integer.parseInt(mWifiStyle.getValue()) == 0) {
             mWifiColorPicker.setEnabled(false);
+            mWifiColorPicker.setSummary(R.string.enable_wifi_text);
         }
     }
 
@@ -115,6 +117,11 @@ public class StatusBarSignal extends ReVoltPreferenceFragment implements
             Settings.System.putInt(mContentRes,
                     Settings.System.STATUSBAR_SIGNAL_TEXT, val);
             mColorPicker.setEnabled(val == 0 ? false : true);
+            if (val == 0) {
+                mColorPicker.setSummary(R.string.enable_signal_text);
+            } else {
+                mColorPicker.setSummary(null);
+            }
             Helpers.restartSystemUI();
             return true;
         } else if (preference == mColorPicker) {
@@ -132,6 +139,11 @@ public class StatusBarSignal extends ReVoltPreferenceFragment implements
             Settings.System.putInt(mContentRes,
                     Settings.System.STATUSBAR_WIFI_SIGNAL_TEXT, val);
             mWifiColorPicker.setEnabled(val == 0 ? false : true);
+            if (val == 0) {
+                mWifiColorPicker.setSummary(R.string.enable_wifi_text);
+            } else {
+                mWifiColorPicker.setSummary(null);
+            }
             Helpers.restartSystemUI();
             return true;
         } else if (preference == mWifiColorPicker) {

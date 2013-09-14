@@ -113,6 +113,13 @@ public class StatusBarClock extends ReVoltPreferenceFragment implements
         mClockDoubleClick.setOnPreferenceChangeListener(this);
         mClockDoubleClick.setSummary(getProperSummary(mClockDoubleClick));
 
+        if (Integer.parseInt(mClockStyle.getValue()) == 0) {
+            mClockAmPmstyle.setEnabled(false);
+            mColorPicker.setEnabled(false);
+            mClockAmPmstyle.setSummary(R.string.enable_clock_location);
+            mColorPicker.setSummary(R.string.enable_clock_location);
+        }
+
         boolean mClockDateToggle = Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_DATE_DISPLAY, 0) != 0;
         if (!mClockDateToggle) {
@@ -140,6 +147,17 @@ public class StatusBarClock extends ReVoltPreferenceFragment implements
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(mContentRes,
                     Settings.System.STATUSBAR_CLOCK_STYLE, val);
+            if (val == 0) {
+                mClockAmPmstyle.setEnabled(false);
+                mColorPicker.setEnabled(false);
+                mClockAmPmstyle.setSummary(R.string.enable_clock_location);
+                mColorPicker.setSummary(R.string.enable_clock_location);
+            } else {
+                mClockAmPmstyle.setEnabled(true);
+                mColorPicker.setEnabled(true);
+                mClockAmPmstyle.setSummary(null);
+                mColorPicker.setSummary(null);
+            }
 
         } else if (preference == mColorPicker) {
             String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
