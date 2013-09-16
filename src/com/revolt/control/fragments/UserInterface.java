@@ -313,7 +313,7 @@ public class UserInterface extends ReVoltPreferenceFragment implements OnPrefere
             mHideExtras.setEnabled(false);
             mHideExtras.setSummary(R.string.enable_tablet_ui); 
         }
-
+        resetBootAnimation();
         findWallpaperStatus();
     }
 
@@ -330,7 +330,6 @@ public class UserInterface extends ReVoltPreferenceFragment implements OnPrefere
                 mDisableBootAnimation.setSummary(null);
             }
         }
-        resetBootAnimation();
     }
 
     /**
