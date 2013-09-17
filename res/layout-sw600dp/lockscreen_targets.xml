@@ -69,7 +69,7 @@
                 android:padding="4dip"
                 android:text="@string/lockscreen_wallpaper_title"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#FFFFFF" />
+                android:textColor="#000000" />
 
             <ImageView
                 android:id="@id/lockscreen_wallpaper_button"
