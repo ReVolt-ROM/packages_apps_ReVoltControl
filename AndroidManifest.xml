@@ -210,9 +210,20 @@
             </intent-filter>
         </activity>
 
+        <!-- Notifications -->
         <activity
             android:name=".fragments.NotificationShortcuts"
             android:label="@string/title_notification_shortcuts">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="com.revolt.control.SHORTCUT"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".fragments.PowerWidget"
+            android:label="@string/title_power_widget">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

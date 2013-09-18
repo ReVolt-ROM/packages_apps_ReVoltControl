@@ -103,10 +103,17 @@
 
     <header
         android:id="@+id/notification_shortcuts"
-        android:title="@string/notification_shortcuts_title"
+        android:title="@string/title_notification_shortcuts"
         android:fragment="com.revolt.control.fragments.NotificationShortcuts"
         android:icon="@drawable/ic_revolt_notification_shortcuts"
         android:summary="@string/header_summary_notification_shortcuts" />
+
+    <header
+        android:id="@+id/power_widget"
+        android:title="@string/title_power_widget"
+        android:fragment="com.revolt.control.fragments.PowerWidget"
+        android:icon="@drawable/ic_revolt_power_widget"
+        android:summary="@string/header_summary_power_widget" />
 
     <header
         android:id="@+id/system"
