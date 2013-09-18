@@ -98,6 +98,17 @@
         android:summary="@string/header_summary_signal" />
 
     <header
+        android:id="@+id/notifications"
+        android:title="@string/header_notifications" />
+
+    <header
+        android:id="@+id/notification_shortcuts"
+        android:title="@string/notification_shortcuts_title"
+        android:fragment="com.revolt.control.fragments.NotificationShortcuts"
+        android:icon="@drawable/ic_revolt_notification_shortcuts"
+        android:summary="@string/header_summary_notification_shortcuts" />
+
+    <header
         android:id="@+id/system"
         android:title="@string/header_system" />
 
