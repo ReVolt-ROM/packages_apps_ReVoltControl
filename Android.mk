@@ -15,7 +15,6 @@ LOCAL_CERTIFICATE := platform
 LOCAL_AAPT_INCLUDE_ALL_RESOURCES := true
 LOCAL_AAPT_FLAGS := --extra-packages com.jbirdvegas.mgerrit --auto-add-overlay
 LOCAL_SRC_FILES += $(LOCAL_PATH)/res $(call all-java-files-under,../../../external/jbirdvegas/mGerrit/src)
-LOCAL_SRC_FILES += $(LOCAL_PATH)/../RevoltControl/src/
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res $(LOCAL_PATH)/../../../external/jbirdvegas/mGerrit/res
 LOCAL_STATIC_JAVA_LIBRARIES += nineoldandroids-2.4.0
 LOCAL_STATIC_JAVA_LIBRARIES += volley_lib
