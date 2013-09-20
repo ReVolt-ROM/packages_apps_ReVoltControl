@@ -273,8 +273,8 @@ public class PowerWidget extends ReVoltPreferenceFragment implements
             // fill that checkbox map!
             for (PowerWidgetUtil.ButtonInfo button : PowerWidgetUtil.BUTTONS.values()) {
                 // create a checkbox
-                CheckBoxPreference cb = new CheckBoxPreference(getActivity()
-                        .getApplicationContext());
+                CheckBoxPreference cb = new CheckBoxPreference(getActivity().getApplicationContext());
+                cb.setWidgetLayoutResource(R.layout.power_widget_checkbox);
 
                 // set a dynamic key based on button id
                 cb.setKey(SELECT_BUTTON_KEY_PREFIX + button.getId());
