@@ -184,14 +184,35 @@ public class PowerWidget extends ReVoltPreferenceFragment implements
         MultiSelectListPreference mRingMode;
         ListPreference mFlashMode;
 
+        CheckBoxPreference mAirplaneButton;
+        CheckBoxPreference mAutorotateButton;
+        CheckBoxPreference mBluetoothButton;
+        CheckBoxPreference mBrightnessButton;
+        CheckBoxPreference mFlashlightButton;
+        CheckBoxPreference mGpsButton;
+        CheckBoxPreference mLockscreenButton;
+        CheckBoxPreference mMobiledataButton;
+        CheckBoxPreference mNetworkmodeButton;
+        CheckBoxPreference mScreentimeoutButton;
+        CheckBoxPreference mSleepButton;
+        CheckBoxPreference mSoundButton;
+        CheckBoxPreference mSyncButton;
+        CheckBoxPreference mWifiButton;
+        CheckBoxPreference mWifiapButton;
+        CheckBoxPreference mMediaPreviousButton;
+        CheckBoxPreference mMediaPlayButton;
+        CheckBoxPreference mMediaNextButton;
+        CheckBoxPreference mLteButton;
+        CheckBoxPreference mWimaxButton;
+
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-        }
+//        }
 
-        @Override
-        public void onActivityCreated(Bundle savedInstanceState) {
-            super.onActivityCreated(savedInstanceState);
+//        @Override
+//        public void onActivityCreated(Bundle savedInstanceState) {
+//            super.onActivityCreated(savedInstanceState);
             addPreferencesFromResource(R.xml.power_widget);
 
             PreferenceScreen prefSet = getPreferenceScreen();
@@ -200,6 +221,27 @@ public class PowerWidget extends ReVoltPreferenceFragment implements
             if (getActivity().getApplicationContext() == null) {
                 return;
             }
+
+            mAirplaneButton = (CheckBoxPreference) prefSet.findPreference(PowerWidgetUtil.BUTTON_AIRPLANE);
+            mAutorotateButton = (CheckBoxPreference) prefSet.findPreference(PowerWidgetUtil.BUTTON_AUTOROTATE);
+            mBluetoothButton = (CheckBoxPreference) prefSet.findPreference(PowerWidgetUtil.BUTTON_BLUETOOTH);
+            mBrightnessButton = (CheckBoxPreference) prefSet.findPreference(PowerWidgetUtil.BUTTON_BRIGHTNESS);
+            mFlashlightButton = (CheckBoxPreference) prefSet.findPreference(PowerWidgetUtil.BUTTON_FLASHLIGHT);
+            mGpsButton = (CheckBoxPreference) prefSet.findPreference(PowerWidgetUtil.BUTTON_GPS);
+            mLockscreenButton = (CheckBoxPreference) prefSet.findPreference(PowerWidgetUtil.BUTTON_LOCKSCREEN);
+            mMobiledataButton = (CheckBoxPreference) prefSet.findPreference(PowerWidgetUtil.BUTTON_MOBILEDATA);
+            mNetworkmodeButton = (CheckBoxPreference) prefSet.findPreference(PowerWidgetUtil.BUTTON_NETWORKMODE);
+            mScreentimeoutButton = (CheckBoxPreference) prefSet.findPreference(PowerWidgetUtil.BUTTON_SCREENTIMEOUT);
+            mSleepButton = (CheckBoxPreference) prefSet.findPreference(PowerWidgetUtil.BUTTON_SLEEP);
+            mSoundButton = (CheckBoxPreference) prefSet.findPreference(PowerWidgetUtil.BUTTON_SOUND);
+            mSyncButton = (CheckBoxPreference) prefSet.findPreference(PowerWidgetUtil.BUTTON_SYNC);
+            mWifiButton = (CheckBoxPreference) prefSet.findPreference(PowerWidgetUtil.BUTTON_WIFI);
+            mWifiapButton = (CheckBoxPreference) prefSet.findPreference(PowerWidgetUtil.BUTTON_WIFIAP);
+            mMediaPreviousButton = (CheckBoxPreference) prefSet.findPreference(PowerWidgetUtil.BUTTON_MEDIA_PREVIOUS);
+            mMediaPlayButton = (CheckBoxPreference) prefSet.findPreference(PowerWidgetUtil.BUTTON_MEDIA_PLAY_PAUSE);
+            mMediaNextButton = (CheckBoxPreference) prefSet.findPreference(PowerWidgetUtil.BUTTON_MEDIA_NEXT);
+            mLteButton = (CheckBoxPreference) prefSet.findPreference(PowerWidgetUtil.BUTTON_LTE);
+            mWimaxButton = (CheckBoxPreference) prefSet.findPreference(PowerWidgetUtil.BUTTON_WIMAX);
 
             mBrightnessMode = (MultiSelectListPreference) prefSet
                     .findPreference(EXP_BRIGHTNESS_MODE);
@@ -259,6 +301,7 @@ public class PowerWidget extends ReVoltPreferenceFragment implements
             boolean isWimaxEnabled = WimaxHelper.isWimaxSupported(getActivity());
             if (!isWimaxEnabled) {
                 PowerWidgetUtil.BUTTONS.remove(PowerWidgetUtil.BUTTON_WIMAX);
+                mWimaxButton.setEnabled(false);
             }
 
             // Don't show mobile data options if not supported
@@ -267,65 +310,81 @@ public class PowerWidget extends ReVoltPreferenceFragment implements
                 PowerWidgetUtil.BUTTONS.remove(PowerWidgetUtil.BUTTON_MOBILEDATA);
                 PowerWidgetUtil.BUTTONS.remove(PowerWidgetUtil.BUTTON_NETWORKMODE);
                 PowerWidgetUtil.BUTTONS.remove(PowerWidgetUtil.BUTTON_WIFIAP);
-                prefButtonsModes.removePreference(mNetworkMode);
+                mWimaxButton.setEnabled(false);
+            }
+
+            // some phones run on networks not supported by this button,
+            // so disable it
+            int network_state = -99;
+            try {
+                network_state = Settings.Global.getInt(getActivity()
+                        .getApplicationContext().getContentResolver(),
+                        Settings.Global.PREFERRED_NETWORK_MODE);
+            } catch (Settings.SettingNotFoundException e) {
+                Log.e(TAG, "Unable to retrieve PREFERRED_NETWORK_MODE", e);
+            }
+            switch (network_state) {
+            // list of supported network modes
+                case Phone.NT_MODE_WCDMA_PREF:
+                case Phone.NT_MODE_WCDMA_ONLY:
+                case Phone.NT_MODE_GSM_UMTS:
+                case Phone.NT_MODE_GSM_ONLY:
+                    break;
+                default:
+                    mNetworkmodeButton.setEnabled(false);
+                    break;
+            }
+
+
+            if (!getResources().getBoolean(R.bool.has_torch)) {
+                // disable flashlight if it's not supported
+                mFlashMode.setEnabled(false);
+                mFlashlightButton.setEnabled(false);
             }
 
             // fill that checkbox map!
             for (PowerWidgetUtil.ButtonInfo button : PowerWidgetUtil.BUTTONS.values()) {
-                // create a checkbox
-                CheckBoxPreference cb = new CheckBoxPreference(getActivity().getApplicationContext());
-                cb.setWidgetLayoutResource(R.layout.power_widget_checkbox);
 
-                // set a dynamic key based on button id
-                cb.setKey(SELECT_BUTTON_KEY_PREFIX + button.getId());
-
-                // set vanity info
-                cb.setTitle(button.getTitleResId());
-
-                // set our checked state
-                if (buttonList.contains(button.getId())) {
-                    cb.setChecked(true);
-                } else {
-                    cb.setChecked(false);
-                }
-
-                // add to our prefs set
-                mCheckBoxPrefs.put(cb, button.getId());
-
-                // specific checks for availability on some platforms
-                if (PowerWidgetUtil.BUTTON_FLASHLIGHT.equals(button.getId()) &&
-                        !getResources().getBoolean(R.bool.has_torch)) {
-                    // disable flashlight if it's not supported
-                    cb.setEnabled(false);
-                    mFlashMode.setEnabled(false);
-                } else if (PowerWidgetUtil.BUTTON_NETWORKMODE.equals(button.getId())) {
-                    // some phones run on networks not supported by this button,
-                    // so disable it
-                    int network_state = -99;
-
-                    try {
-                        network_state = Settings.Global.getInt(getActivity()
-                                .getApplicationContext().getContentResolver(),
-                                Settings.Global.PREFERRED_NETWORK_MODE);
-                    } catch (Settings.SettingNotFoundException e) {
-                        Log.e(TAG, "Unable to retrieve PREFERRED_NETWORK_MODE", e);
-                    }
-
-                    switch (network_state) {
-                    // list of supported network modes
-                        case Phone.NT_MODE_WCDMA_PREF:
-                        case Phone.NT_MODE_WCDMA_ONLY:
-                        case Phone.NT_MODE_GSM_UMTS:
-                        case Phone.NT_MODE_GSM_ONLY:
-                            break;
-                        default:
-                            cb.setEnabled(false);
-                            break;
-                    }
-                }
-
-                // add to the category
-                prefButtons.addPreference(cb);
+                if (PowerWidgetUtil.BUTTON_AIRPLANE.equals(button.getId()))
+                    mAirplaneButton.setChecked(buttonList.contains(button.getId()));
+                if (PowerWidgetUtil.BUTTON_AUTOROTATE.equals(button.getId()))
+                    mAutorotateButton.setChecked(buttonList.contains(button.getId()));
+                if (PowerWidgetUtil.BUTTON_BLUETOOTH.equals(button.getId()))
+                    mBluetoothButton.setChecked(buttonList.contains(button.getId()));
+                if (PowerWidgetUtil.BUTTON_BRIGHTNESS.equals(button.getId()))
+                    mBrightnessButton.setChecked(buttonList.contains(button.getId()));
+                if (PowerWidgetUtil.BUTTON_FLASHLIGHT.equals(button.getId()))
+                    mFlashlightButton.setChecked(buttonList.contains(button.getId()));
+                if (PowerWidgetUtil.BUTTON_GPS.equals(button.getId()))
+                    mGpsButton.setChecked(buttonList.contains(button.getId()));
+                if (PowerWidgetUtil.BUTTON_LOCKSCREEN.equals(button.getId()))
+                    mLockscreenButton.setChecked(buttonList.contains(button.getId()));
+                if (PowerWidgetUtil.BUTTON_MOBILEDATA.equals(button.getId()))
+                    mMobiledataButton.setChecked(buttonList.contains(button.getId()));
+                if (PowerWidgetUtil.BUTTON_NETWORKMODE.equals(button.getId()))
+                    mNetworkmodeButton.setChecked(buttonList.contains(button.getId()));
+                if (PowerWidgetUtil.BUTTON_SCREENTIMEOUT.equals(button.getId()))
+                    mScreentimeoutButton.setChecked(buttonList.contains(button.getId()));
+                if (PowerWidgetUtil.BUTTON_SLEEP.equals(button.getId()))
+                    mSleepButton.setChecked(buttonList.contains(button.getId()));
+                if (PowerWidgetUtil.BUTTON_SOUND.equals(button.getId()))
+                    mSoundButton.setChecked(buttonList.contains(button.getId()));
+                if (PowerWidgetUtil.BUTTON_SYNC.equals(button.getId()))
+                    mSyncButton.setChecked(buttonList.contains(button.getId()));
+                if (PowerWidgetUtil.BUTTON_WIFI.equals(button.getId()))
+                    mWifiButton.setChecked(buttonList.contains(button.getId()));
+                if (PowerWidgetUtil.BUTTON_WIFIAP.equals(button.getId()))
+                    mWifiapButton.setChecked(buttonList.contains(button.getId()));
+                if (PowerWidgetUtil.BUTTON_MEDIA_PREVIOUS.equals(button.getId()))
+                    mMediaPreviousButton.setChecked(buttonList.contains(button.getId()));
+                if (PowerWidgetUtil.BUTTON_MEDIA_PLAY_PAUSE.equals(button.getId()))
+                    mMediaPlayButton.setChecked(buttonList.contains(button.getId()));
+                if (PowerWidgetUtil.BUTTON_MEDIA_NEXT.equals(button.getId()))
+                    mMediaNextButton.setChecked(buttonList.contains(button.getId()));
+                if (PowerWidgetUtil.BUTTON_LTE.equals(button.getId()))
+                    mLteButton.setChecked(buttonList.contains(button.getId()));
+                if (PowerWidgetUtil.BUTTON_WIMAX.equals(button.getId()))
+                    mWimaxButton.setChecked(buttonList.contains(button.getId()));
             }
         }
 
@@ -333,28 +392,57 @@ public class PowerWidget extends ReVoltPreferenceFragment implements
                 Preference preference) {
             // we only modify the button list if it was one of our checks that
             // was clicked
-            boolean buttonWasModified = false;
             ArrayList<String> buttonList = new ArrayList<String>();
-            for (Map.Entry<CheckBoxPreference, String> entry : mCheckBoxPrefs.entrySet()) {
-                if (entry.getKey().isChecked()) {
-                    buttonList.add(entry.getValue());
-                }
 
-                if (preference == entry.getKey()) {
-                    buttonWasModified = true;
-                }
-            }
+            if (preference == mAirplaneButton ||
+                preference == mAutorotateButton ||
+                preference == mBluetoothButton ||
+                preference == mBrightnessButton ||
+                preference == mFlashlightButton ||
+                preference == mGpsButton ||
+                preference == mLockscreenButton ||
+                preference == mMobiledataButton ||
+                preference == mNetworkmodeButton ||
+                preference == mScreentimeoutButton ||
+                preference == mSleepButton ||
+                preference == mSoundButton ||
+                preference == mSyncButton ||
+                preference == mWifiButton ||
+                preference == mWifiapButton ||
+                preference == mMediaPreviousButton ||
+                preference == mMediaPlayButton ||
+                preference == mMediaNextButton ||
+                preference == mLteButton ||
+                preference == mWimaxButton) {
 
-            if (buttonWasModified) {
+                if (mAirplaneButton.isChecked()) buttonList.add(PowerWidgetUtil.BUTTON_AIRPLANE);
+                if (mAutorotateButton.isChecked()) buttonList.add(PowerWidgetUtil.BUTTON_AUTOROTATE);
+                if (mBluetoothButton.isChecked()) buttonList.add(PowerWidgetUtil.BUTTON_BLUETOOTH);
+                if (mBrightnessButton.isChecked()) buttonList.add(PowerWidgetUtil.BUTTON_BRIGHTNESS);
+                if (mFlashlightButton.isChecked()) buttonList.add(PowerWidgetUtil.BUTTON_FLASHLIGHT);
+                if (mGpsButton.isChecked()) buttonList.add(PowerWidgetUtil.BUTTON_GPS);
+                if (mLockscreenButton.isChecked()) buttonList.add(PowerWidgetUtil.BUTTON_LOCKSCREEN);
+                if (mMobiledataButton.isChecked()) buttonList.add(PowerWidgetUtil.BUTTON_MOBILEDATA);
+                if (mNetworkmodeButton.isChecked()) buttonList.add(PowerWidgetUtil.BUTTON_NETWORKMODE);
+                if (mScreentimeoutButton.isChecked()) buttonList.add(PowerWidgetUtil.BUTTON_SCREENTIMEOUT);
+                if (mSleepButton.isChecked()) buttonList.add(PowerWidgetUtil.BUTTON_SLEEP);
+                if (mSoundButton.isChecked()) buttonList.add(PowerWidgetUtil.BUTTON_SOUND);
+                if (mSyncButton.isChecked()) buttonList.add(PowerWidgetUtil.BUTTON_SYNC);
+                if (mWifiButton.isChecked()) buttonList.add(PowerWidgetUtil.BUTTON_WIFI);
+                if (mWifiapButton.isChecked()) buttonList.add(PowerWidgetUtil.BUTTON_WIFIAP);
+                if (mMediaPreviousButton.isChecked()) buttonList.add(PowerWidgetUtil.BUTTON_MEDIA_PREVIOUS);
+                if (mMediaPlayButton.isChecked()) buttonList.add(PowerWidgetUtil.BUTTON_MEDIA_PLAY_PAUSE);
+                if (mMediaNextButton.isChecked()) buttonList.add(PowerWidgetUtil.BUTTON_MEDIA_NEXT);
+                if (mLteButton.isChecked()) buttonList.add(PowerWidgetUtil.BUTTON_LTE);
+                if (mWimaxButton.isChecked()) buttonList.add(PowerWidgetUtil.BUTTON_WIMAX);
+
                 // now we do some wizardry and reset the button list
                 PowerWidgetUtil.saveCurrentButtons(getActivity().getApplicationContext(),
                         PowerWidgetUtil.mergeInNewButtonString(
-                                PowerWidgetUtil.getCurrentButtons(getActivity()
-                                        .getApplicationContext()), PowerWidgetUtil
-                                        .getButtonStringFromList(buttonList)));
+                                PowerWidgetUtil.getCurrentButtons(getActivity().getApplicationContext()), 
+                                        PowerWidgetUtil.getButtonStringFromList(buttonList)));
                 return true;
             }
-
             return false;
         }
 

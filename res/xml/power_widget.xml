@@ -21,11 +21,111 @@
         android:key="pref_buttons"
         android:title="@string/title_buttons" />
 
+        <CheckBoxPreference
+            android:key="toggleAirplane"
+            android:title="@string/title_toggle_airplane"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="toggleAutoRotate"
+            android:title="@string/title_toggle_autorotate"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="toggleBluetooth"
+            android:title="@string/title_toggle_bluetooth"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="toggleBrightness"
+            android:title="@string/title_toggle_brightness"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="toggleFlashlight"
+            android:title="@string/title_toggle_flashlight"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="toggleGPS"
+            android:title="@string/title_toggle_gps"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="toggleLockScreen"
+            android:title="@string/title_toggle_lockscreen"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="toggleMobileData"
+            android:title="@string/title_toggle_mobiledata"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="toggleNetworkMode"
+            android:title="@string/title_toggle_networkmode"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="toggleScreenTimeout"
+            android:title="@string/title_toggle_screentimeout"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="toggleSleepMode"
+            android:title="@string/title_toggle_sleep"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="toggleSound"
+            android:title="@string/title_toggle_sound"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="toggleSync"
+            android:title="@string/title_toggle_sync"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="toggleWifi"
+            android:title="@string/title_toggle_wifi"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="toggleWifiAp"
+            android:title="@string/title_toggle_wifiap"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="toggleMediaPrevious"
+            android:title="@string/title_toggle_media_previous"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="toggleMediaPlayPause"
+            android:title="@string/title_toggle_media_play_pause"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="toggleMediaNext"
+            android:title="@string/title_toggle_media_next"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="toggleLte"
+            android:title="@string/title_toggle_lte"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="toggleWimax"
+            android:title="@string/title_toggle_wimax"
+            android:defaultValue="false" />
+
     <PreferenceCategory
         android:key="pref_buttons_modes"
         android:title="@string/title_button_modes">
 
-        <MultiSelectListPreference
+         <MultiSelectListPreference
             android:key="pref_brightness_mode"
             android:dialogTitle="@string/pref_brightness_mode_title"
             android:title="@string/pref_brightness_mode_title"
