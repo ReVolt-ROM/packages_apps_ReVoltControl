@@ -174,4 +174,19 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="misc"
+        android:title="@string/misc_short">
+
+        <PreferenceScreen
+           android:key="font_size"
+           android:title="@string/font_size_title"
+           android:summary="@string/font_size_summary">
+           <intent android:action="android.intent.action.MAIN"
+                   android:targetPackage="com.WhiteLight.FontSizeFree"
+                   android:targetClass="com.WhiteLight.FontSizeFree.FontSize" />
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
