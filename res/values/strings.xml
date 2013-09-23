@@ -33,7 +33,7 @@
     <!-- Activity titles defined in AndroidManifest.xml -->
     <string name="title_about">About ReVolt</string>
     <string name="title_ui">General User Interface</string>
-    <string name="title_halo">Customize Halp</string>
+    <string name="title_halo">Customize Halo</string>
     <string name="title_pie">Pie Controls</string>
     <string name="title_statusbar_clock">Statusbar Clock</string>
     <string name="title_statusbar_toggles">Statusbar Toggles</string>
