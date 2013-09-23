@@ -98,7 +98,7 @@
            revolt:twitterHandle="aokp_rom"
            revolt:donateLink="@string/donate_aokp"
            revolt:githubLink="@string/github_aokp"
-           revolt:emailDev="aokp@aokp.co"/>
+           revolt:emailDev="github@aokp.co"/>
 
        <com.revolt.control.widgets.DeveloperPreference
            android:title="CyanogenMod"
