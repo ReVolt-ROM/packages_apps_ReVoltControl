@@ -98,8 +98,8 @@ public class StatusBarSignal extends ReVoltPreferenceFragment implements
                     Settings.System.STATUS_BAR_TRAFFIC, mStatusBarTraffic.isChecked());
             return true;
          } else if (preference == mSMSBreath) {
-             Settings.System.putInt(getContentResolver(), Settings.System.SMS_BREATH,
-                    mSMSBreath.isChecked() ? 1 : 0);
+             Settings.System.putInt(mContentRes,
+                    Settings.System.SMS_BREATH, mSMSBreath.isChecked() ? 1 : 0);
            return true;
          } else if (preference == mMissedCallBreath) {
              Settings.System.putBoolean(mContentRes,
