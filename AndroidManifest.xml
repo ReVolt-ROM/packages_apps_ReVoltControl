@@ -136,6 +136,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".fragments.ScreenStateToggles"
+            android:label="@string/screen_state_toggles_title" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.revolt.control.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".fragments.PowerMenu"
             android:label="@string/title_power_menu">
             <intent-filter>

@@ -168,4 +168,10 @@
         android:icon="@drawable/ic_revolt_vibrations"
         android:fragment="com.revolt.control.fragments.Vibrations" />
 
+    <header
+        android:id="@+id/screen_state_service"
+        android:fragment="com.revolt.control.fragments.ScreenStateToggles"
+        android:icon="@drawable/ic_revolt_screen_state"
+        android:title="@string/screen_state_toggles_title" />
+
 </preference-headers>

@@ -76,6 +76,8 @@ public class CreateShortcut extends LauncherActivity {
             return R.drawable.ic_revolt_general_ui;
         } else if (c.equals("Weather")) {
             return R.drawable.ic_revolt_weather;
+        } else if (c.equals("ScreenStateToggles")){
+            return R.drawable.ic_revolt_screen_state;
         } else {
             return R.mipmap.ic_launcher;
         }
