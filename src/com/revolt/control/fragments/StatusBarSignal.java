@@ -62,9 +62,9 @@ public class StatusBarSignal extends ReVoltPreferenceFragment implements
         mStatusBarTraffic.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.STATUS_BAR_TRAFFIC, false));
 
-        mSMSBreath = (CheckBoxPreference) findPreference("pref_key_sms_breath");
-        mSMSBreath.setChecked(Settings.System.getBoolean(mContentRes,
-                Settings.System.SMS_BREATH, false));
+        mSMSBreath = (CheckBoxPreference) findPreference("sms_breath");
+        mSMSBreath.setChecked(Settings.System.getInt(mContentRes,
+                Settings.System.SMS_BREATH, 1) == 1);
 
         mMissedCallBreath = (CheckBoxPreference) findPreference("missed_call_breath");
         mMissedCallBreath.setChecked(Settings.System.getBoolean(mContentRes,
@@ -98,8 +98,8 @@ public class StatusBarSignal extends ReVoltPreferenceFragment implements
                     Settings.System.STATUS_BAR_TRAFFIC, mStatusBarTraffic.isChecked());
             return true;
          } else if (preference == mSMSBreath) {
-             Settings.System.putBoolean(mContentRes,
-                    Settings.System.SMS_BREATH, mSMSBreath.isChecked());
+             Settings.System.putInt(getContentResolver(), Settings.System.SMS_BREATH,
+                    mSMSBreath.isChecked() ? 1 : 0);
            return true;
          } else if (preference == mMissedCallBreath) {
              Settings.System.putBoolean(mContentRes,
