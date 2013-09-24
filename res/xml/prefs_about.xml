@@ -68,6 +68,13 @@
            revolt:githubLink="@string/github_timpohladthomas"
            revolt:emailDev="timpohladthomas@gmail.com"/>
 
+       <com.revolt.control.widgets.DeveloperPreference
+           android:title="Nihar Gajare"
+           revolt:nameDev="NiharG"
+           revolt:twitterHandle="NiharG15" 
+           revolt:githubLink="@string/github_niharg15"
+           revolt:emailDev="nihargajre@gmail.com" />
+
    </PreferenceCategory>    
 
    <PreferenceCategory
@@ -98,7 +105,7 @@
            revolt:twitterHandle="aokp_rom"
            revolt:donateLink="@string/donate_aokp"
            revolt:githubLink="@string/github_aokp"
-           revolt:emailDev="aokp@aokp.co"/>
+           revolt:emailDev="github@aokp.co"/>
 
        <com.revolt.control.widgets.DeveloperPreference
            android:title="CyanogenMod"
