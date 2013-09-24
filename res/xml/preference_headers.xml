@@ -174,4 +174,10 @@
         android:icon="@drawable/ic_revolt_screen_state"
         android:title="@string/screen_state_toggles_title" />
 
+    <header
+        android:id="@+id/wakelock_blocker"
+        android:fragment="com.revolt.control.fragments.WakeLockBlocker"
+        android:icon="@drawable/ic_revolt_wakelock_blocker"
+        android:title="@string/wakelock_blocker" />
+
 </preference-headers>

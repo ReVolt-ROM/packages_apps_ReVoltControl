@@ -145,6 +145,13 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".fragments.WakeLockBlocker"
+            android:label="@string/wakelock_blocker" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".fragments.PowerMenu"
             android:label="@string/title_power_menu">
             <intent-filter>
