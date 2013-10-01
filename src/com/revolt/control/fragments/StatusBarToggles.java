@@ -65,6 +65,7 @@ public class StatusBarToggles extends ReVoltPreferenceFragment implements
 
     private static final String PREF_ENABLE_TOGGLES = "enabled_toggles";
     private static final String PREF_COLLAPSE_ALL = "collapse_shade_all";
+    private static final String PREF_FLOATING_TOGGLES = "floating_toggles";
     private static final String PREF_TOGGLES_PER_ROW = "toggles_per_row";
     private static final String PREF_TOGGLES_STYLE = "toggles_style";
     private static final String PREF_TOGGLE_FAV_CONTACT = "toggle_fav_contact";
@@ -105,6 +106,7 @@ public class StatusBarToggles extends ReVoltPreferenceFragment implements
     ListPreference mChooseFastToggleSide;
     ListPreference mScreenshotDelay;
     ListPreference mCollapseShade;
+    CheckBoxPreference mFloatingToggles;
     ListPreference mOnDoubleClick;
     CustomTogglePref mCustomToggles;
     PreferenceGroup mCustomCat;
@@ -205,6 +207,9 @@ public class StatusBarToggles extends ReVoltPreferenceFragment implements
         mCollapseShade.setValue(Settings.System.getInt(mContentRes,
                 Settings.System.COLLAPSE_SHADE, 10) + "");
 
+        mFloatingToggles = (CheckBoxPreference) findPreference(PREF_FLOATING_TOGGLES);
+        mFloatingToggles.setOnPreferenceChangeListener(this);
+
         mOnDoubleClick = (ListPreference) findPreference(PREF_DCLICK_ACTION);
         mOnDoubleClick.setOnPreferenceChangeListener(this);
         mOnDoubleClick.setValue(Settings.System.getInt(mContentRes,
@@ -293,6 +298,11 @@ public class StatusBarToggles extends ReVoltPreferenceFragment implements
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(mContentRes,
                     Settings.System.QUICK_TOGGLES_PER_ROW, val);
+        } else if (preference == mFloatingToggles) {
+            boolean val = (Boolean) newValue;
+            Settings.System.putBoolean(mContentRes,
+                    Settings.System.TOGGLES_FLOATING_WINDOW, val);
+            mContentRes.notifyChange(Settings.System.getUriFor(Settings.System.TOGGLES_FLOATING_WINDOW), null);
         } else if (preference == mCollapseAll) {
             boolean val = (Boolean) newValue;
             Settings.System.putBoolean(mContentRes,

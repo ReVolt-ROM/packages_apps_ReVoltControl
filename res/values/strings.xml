@@ -554,6 +554,8 @@
     <string name="long_collapse">On long click</string>
     <string name="both_collapse">Both click and long click</string>
     <string name="custom_toggle_colors">Custom colors</string>
+    <string name="toggle_floating_toggles_title">Floating toggles</string>
+    <string name="toggle_floating_toggles_summary">Launch all generic toggle actions in a floating window</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Clock style</string>
