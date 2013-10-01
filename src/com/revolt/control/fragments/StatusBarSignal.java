@@ -79,6 +79,14 @@ public class StatusBarSignal extends ReVoltPreferenceFragment implements
             mWifiColorPicker.setEnabled(false);
             mWifiColorPicker.setSummary(R.string.enable_wifi_text);
         }
+
+        if (!hasPhoneAbility(mContext)) {
+            prefs.removePreference(mDbmStyletyle);
+            prefs.removePreference(mColorPicker);
+            prefs.removePreference(mHideSignal);
+            prefs.removePreference(mAltSignal);
+            prefs.removePreference(mShow4gForLte);
+        }
     }
 
     @Override
