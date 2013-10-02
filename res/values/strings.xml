@@ -1283,6 +1283,11 @@
     <string name="cm_circle_percentage">CM CircleMOD with percentage</string>
     <string name="circle_dotted_percentage">Circle dotted with percentage</string>
     <string name="rush_battery">Rush</string>
+    <string name="rb_battery4">Racing</string>
+    <string name="rb_battery5">Gauge</string>
+    <string name="rb_battery6">Planet</string>
+    <string name="rb_battery7">Slider</string>
+    <string name="rb_battery8">Brick</string>
 
     <!-- NavBar -->
     <string name="right">Right</string>
