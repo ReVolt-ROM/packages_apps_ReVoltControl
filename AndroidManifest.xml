@@ -210,6 +210,16 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".fragments.ActiveDisplaySettings"
+            android:label="@string/ad_settings_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="com.revolt.control.SHORTCUT"/>
+            </intent-filter>
+        </activity>
+
         <!-- Notifications -->
         <activity
             android:name=".fragments.NotificationShortcuts"

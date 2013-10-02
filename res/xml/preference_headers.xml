@@ -41,7 +41,7 @@
         android:id="@+id/active_display"
         android:fragment="com.revolt.control.fragments.ActiveDisplaySettings"
         android:title="@string/ad_settings_title"
-        android:icon="@drawable/ic_revolt_lockscreens"
+        android:icon="@drawable/ic_revolt_active_display"
         android:summary="@string/header_summary_active_display" />
 
     <header
