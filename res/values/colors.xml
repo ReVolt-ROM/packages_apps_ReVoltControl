@@ -27,4 +27,7 @@
     <color name="extension_list_item_color">#ff000000</color>
     <color name="configure_light_background">#00000000</color>
 
+    <!-- Gesture Anywhere -->
+    <color name="ga_gesture_color">@android:color/holo_blue_light</color>
+
 </resources>

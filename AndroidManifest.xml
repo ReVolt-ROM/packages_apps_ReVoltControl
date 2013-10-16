@@ -215,7 +215,26 @@
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
+        <activity android:name=".fragments.GestureAnywhereBuilderActivity"
+            android:label="@string/title_gesture_anywhere">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".fragments.GestureAnywhereCreateGestureActivity"
+            android:label="@string/title_gesture_anywhere">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".fragments.GestureAnywhereSettings"
+            android:label="@string/title_gesture_anywhere">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
 
+                <category android:name="com.revolt.control.SHORTCUT"/>
+            </intent-filter>
+        </activity>
         <activity
             android:name=".fragments.StatusBarToggles"
             android:label="@string/title_statusbar_toggles">
