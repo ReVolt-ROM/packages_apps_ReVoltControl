@@ -66,6 +66,13 @@
         android:summary="@string/ribbon_settings_summary" />
 
     <header
+        android:id="@+id/ribbon_targets"
+        android:fragment="com.revolt.control.fragments.GestureAnywhereSettings"
+        android:icon="@drawable/ic_revolt_gesture_anywhere"
+        android:title="@string/title_gesture_anywhere"
+        android:summary="@string/header_summary_gesture_anywhere" />
+
+    <header
         android:id="@+id/statusbar"
         android:title="@string/header_statusbar" />
 
