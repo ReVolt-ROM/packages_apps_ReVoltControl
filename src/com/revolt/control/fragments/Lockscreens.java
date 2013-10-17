@@ -113,6 +113,7 @@ public class Lockscreens extends ReVoltPreferenceFragment implements
     private Switch mLockSeeThroughSwitch;
     private Button mLockTextColorButton;
     private Switch mCameraWidgetSwitch;
+    private Switch mLockRingBatterySwitch;
 
     private TextView mWallpaperText;
     private TextView mGlowTorchText;
@@ -130,6 +131,7 @@ public class Lockscreens extends ReVoltPreferenceFragment implements
     private TextView mLockSeeThroughText;
     private TextView mLockUnlimitedWidgetsText;
     private TextView mCameraWidgetText;
+    private TextView mLockRingBatteryText;
 
     private ShortcutPickerHelper mPicker;
     private String[] targetActivities = new String[8];
@@ -445,15 +447,26 @@ public class Lockscreens extends ReVoltPreferenceFragment implements
         mCameraWidgetText = ((TextView) getActivity().findViewById(R.id.lockscreen_camera_widget_id));
         mCameraWidgetText.setOnClickListener(mCameraWidgetTextListener);
         mCameraWidgetSwitch = (Switch) getActivity().findViewById(R.id.lockscreen_camera_widget_switch);
-        mCameraWidgetSwitch
-                .setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(CompoundButton v, boolean checked) {
-                        Settings.System.putBoolean(cr,
-                                Settings.System.LOCKSCREEN_CAMERA_WIDGET_SHOW, checked);
-                        updateSwitches();
-                    }
-                });
+        mCameraWidgetSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton v, boolean checked) {
+                Settings.System.putBoolean(cr,
+                        Settings.System.LOCKSCREEN_CAMERA_WIDGET_SHOW, checked);
+                updateSwitches();
+            }
+        });
+
+        mLockRingBatteryText = ((TextView) getActivity().findViewById(R.id.lockscreen_battery_around_lockscreen_ring_id));
+        mLockRingBatteryText.setOnClickListener(mLockRingBatteryTextListener);
+        mLockRingBatterySwitch = (Switch) getActivity().findViewById(R.id.lockscreen_battery_around_lockscreen_ring_switch);
+        mLockRingBatterySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton v, boolean checked) {
+                Settings.System.putBoolean(cr,
+                        Settings.System.BATTERY_AROUND_LOCKSCREEN_RING, checked);
+                updateSwitches();
+            }
+        });
 
         if (isSW600DPScreen(mContext)) {
             // Lockscreen Camera Widget doesn't appear at SW600DP
@@ -630,6 +643,16 @@ public class Lockscreens extends ReVoltPreferenceFragment implements
         }
     };
 
+    private TextView.OnClickListener mLockRingBatteryTextListener = new TextView.OnClickListener() {
+        public void onClick(View v) {
+            createMessage(
+                    getResources().getString(
+                            R.string.lockscreen_battery_around_lockscreen_ring_title),
+                    getResources().getString(
+                            R.string.lockscreen_battery_around_lockscreen_ring_summary));
+        }
+    };
+
     private void updateSwitches() {
         if (wallpaperExists()) {
             mWallpaperButton.setImageDrawable(getResources().getDrawable(R.drawable.ic_wallpaper_exists));
@@ -662,6 +685,8 @@ public class Lockscreens extends ReVoltPreferenceFragment implements
                 Settings.System.LOCKSCREEN_SEE_THROUGH, false));
         mCameraWidgetSwitch.setChecked(Settings.System.getBoolean(cr,
                 Settings.System.LOCKSCREEN_CAMERA_WIDGET_SHOW, true));
+        mLockRingBatterySwitch.setChecked(Settings.System.getBoolean(cr,
+                Settings.System.BATTERY_AROUND_LOCKSCREEN_RING, false));
     }
 
 

@@ -1019,6 +1019,8 @@
     </string>
     <string name="lockscreen_camera_widget_title">Lockscreen camera widget</string>
     <string name="lockscreen_camera_widget_summary">Allows you to disable camera widget in lockscreen.</string>
+    <string name="lockscreen_battery_around_lockscreen_ring_title">Battery level around lock ring</string>
+    <string name="lockscreen_battery_around_lockscreen_ring_summary">Set to show battery level indicator around lock ring.</string>
     <string name="volume_rocker_wake_title">Volume wake</string>
     <string name="volume_rocker_wake_summary">Wake screen with volume rockers</string>
     <string name="volume_music_controls_title">Volume music controls</string>
