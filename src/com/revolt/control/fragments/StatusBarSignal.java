@@ -85,7 +85,6 @@ public class StatusBarSignal extends ReVoltPreferenceFragment implements
             prefs.removePreference(mColorPicker);
             prefs.removePreference(mHideSignal);
             prefs.removePreference(mAltSignal);
-            prefs.removePreference(mShow4gForLte);
         }
     }
 
