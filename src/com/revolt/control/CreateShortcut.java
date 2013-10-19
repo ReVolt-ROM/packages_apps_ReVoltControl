@@ -79,7 +79,7 @@ public class CreateShortcut extends LauncherActivity {
         } else if (c.equals("ScreenStateToggles")){
             return R.drawable.ic_revolt_screen_state;
         } else if (c.equals("WakeLockBlocker")){
-            return R.drawable.ic_rom_control_wakelock_blocker;
+            return R.drawable.ic_revolt_wakelock_blocker;
         } else {
             return R.mipmap.ic_launcher;
         }

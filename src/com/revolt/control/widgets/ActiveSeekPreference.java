@@ -13,7 +13,6 @@ import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
-
 import com.revolt.control.R;
 
 public class ActiveSeekPreference extends Preference implements OnSeekBarChangeListener {
@@ -138,7 +137,7 @@ public class ActiveSeekPreference extends Preference implements OnSeekBarChangeL
     }
     
     /**
-     * Update a SeekBarPreference view with our current state
+     * Update a ActiveSeekPreference view with our current state
      * @param view
      */
     protected void updateView(View view) {
