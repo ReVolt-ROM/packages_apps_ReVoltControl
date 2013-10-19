@@ -33,6 +33,8 @@ import com.revolt.control.widgets.ActiveSeekPreference;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import com.revolt.control.widgets.SeekBarPreference;
+import com.revolt.control.util.AppMultiSelectListPreference;
 
 import static android.hardware.Sensor.TYPE_LIGHT;
 import static android.hardware.Sensor.TYPE_PROXIMITY;
@@ -65,7 +67,6 @@ public class ActiveDisplaySettings extends ReVoltPreferenceFragment implements
     private ListPreference mRedisplayPref;
     private ListPreference mDisplayActivePref;
     private ActiveSeekPreference mBrightnessLevel;
-    private SeekBarPreference mBrightnessLevel;
     private AppMultiSelectListPreference mExcludedAppsPref;
 
     @Override

@@ -32,7 +32,7 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.android.settings.R;
+import com.revolt.control.R;
 
 import java.text.Collator;
 import java.util.ArrayList;
