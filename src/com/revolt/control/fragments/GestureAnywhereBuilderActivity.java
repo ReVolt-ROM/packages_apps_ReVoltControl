@@ -42,6 +42,8 @@ import android.text.TextUtils;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.BitmapDrawable;
+import com.revolt.control.util.AbstractAsyncSuCMDProcessor;
+import com.revolt.control.util.CMDProcessor;
 import com.revolt.control.R;
 import com.revolt.control.util.ShortcutPickHelper;
 
@@ -101,6 +103,10 @@ public class GestureAnywhereBuilderActivity extends ListActivity
         setListAdapter(mAdapter);
 
         if (sStore == null) {
+            if(!mStoreFile.exists()) {
+                CMDProcessor.runSuCommand("touch /data/system/ga_gestures");
+                CMDProcessor.runSuCommand("chmod 666 /data/system/ga_gestures");
+            }
             sStore = GestureLibraries.fromFile(mStoreFile);
         }
         mEmpty = (TextView) findViewById(android.R.id.empty);
