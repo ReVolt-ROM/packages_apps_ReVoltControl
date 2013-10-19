@@ -514,7 +514,7 @@
                     android:singleLine="true"
                     android:text="@string/lockscreen_battery_around_lockscreen_ring_title"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <Switch
                     android:id="@id/lockscreen_battery_around_lockscreen_ring_switch"
