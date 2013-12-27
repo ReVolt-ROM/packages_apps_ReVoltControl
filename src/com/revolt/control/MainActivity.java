@@ -9,13 +9,12 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
-import android.view.MenuItem
-import com.revolt.control.R;
+import android.view.MenuItem;
+import com.revolt.control.fragments.ArrangeTogglesFragment;
 import com.revolt.control.fragments.GeneralSettingsFragment;
 import com.revolt.control.fragments.HardwareKeysFragment;
 import com.revolt.control.fragments.NavigationDrawerFragment;
 import com.revolt.control.fragments.StatusbarSettingsFragment;
-import com.revolt.control.fragments.ToggleSetupFragment;
 
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -77,7 +76,7 @@ public class MainActivity extends Activity
                 break;
 
             case 3:
-                fragment = new ToggleSetupFragment();
+                fragment = new ArrangeTogglesFragment();
                 break;
         }
         return fragment;
