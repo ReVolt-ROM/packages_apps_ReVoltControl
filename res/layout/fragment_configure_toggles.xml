@@ -96,7 +96,18 @@
             android:entryValues="@array/choose_toggle_side_values"
             />
 
-    <com.revolt.control.widgets.CategorySeparator
+    <com.revolt.control.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/toggles_swipe_to_switch"
+            android:title="@string/toggles_swipe_to_switch_title"
+            android:summary="@string/toggles_swipe_to_switch_summary"
+            android:key="swipe_to_switch"
+            android:defaultValue="false"
+            />
+
+    <com.revolt.control.widgets.CategorySeparator 
             style="@style/defaultSize"/>
 
     <com.mobeta.android.dslv.DragSortListView
