@@ -7,16 +7,18 @@ import android.app.FragmentManager;
 import android.content.ComponentName;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.revoltcontrol.fragments.GeneralSettingsFragment;
+import com.revolt.control.fragments.GeneralSettingsFragment;
 import com.revolt.control.fragments.HardwareKeysFragment;
 import com.revolt.control.fragments.LockscreenSettingsFragment;
 import com.revolt.control.fragments.NavRingTargets;
 import com.revolt.control.fragments.NavigationDrawerFragment;
 import com.revolt.control.fragments.PowerMenuSettingsFragment;
+import com.revolt.control.fragments.ribbons.RibbonsFragment;
 import com.revolt.control.fragments.StatusbarSettingsFragment;
 import com.revolt.control.fragments.navbar.NavbarTabHostFragment;
 import com.revolt.control.fragments.toggles.TogglesTabHostFragment;
@@ -24,6 +26,7 @@ import com.revolt.control.fragments.SoundSettingsFragment;
 
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -111,6 +114,10 @@ public class MainActivity extends Activity
             case 9:
                 fragment = new SoundSettingsFragment();
                 break;
+
+            case 10:
+                fragment = new RibbonsFragment();
+                break;
         }
         return fragment;
     }
@@ -167,6 +174,4 @@ public class MainActivity extends Activity
         int componentStatus = p.getComponentEnabledSetting(new ComponentName(this, LauncherActivity.class));
         return componentStatus != PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
     }
-
-
 }
