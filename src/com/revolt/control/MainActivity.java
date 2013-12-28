@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import com.revolt.control.fragments.ArrangeTogglesFragment;
 import com.revolt.control.fragments.GeneralSettingsFragment;
 import com.revolt.control.fragments.HardwareKeysFragment;
+import com.revolt.control.fragments.NavRingTargets;
 import com.revolt.control.fragments.NavigationDrawerFragment;
 import com.revolt.control.fragments.StatusbarSettingsFragment;
 import com.revolt.control.fragments.TogglesTabHostFragment;
@@ -81,6 +82,10 @@ public class MainActivity extends Activity
 
             case 3:
                 fragment = new TogglesTabHostFragment();
+                break;
+
+            case 4:
+                fragment = new NavRingTargets();
                 break;
         }
         return fragment;

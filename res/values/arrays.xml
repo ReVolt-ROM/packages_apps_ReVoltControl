@@ -5,11 +5,14 @@
         <item>@string/category_hardware_keys</item>
         <item>@string/category_statusbar</item>
         <item>@string/category_toggles</item>
+        <item>@string/category_navring</item>
     </string-array>
     <string-array name="navigation_drawer_icons">
         <item>@drawable/ic_revolt_general</item>
         <item>@drawable/ic_revolt_hardware_keys</item>
         <item>@drawable/ic_revolt_signal</item>
         <item>@drawable/ic_revolt_toggles</item>
+        <item>@drawable/ic_rom_control_navigation_ring</item>
     </string-array>
+
 </resources>
