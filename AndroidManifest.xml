@@ -19,6 +19,7 @@
             android:theme="@style/AppTheme">
         <activity
                 android:name="com.revolt.control.MainActivity"
+                android:configChanges="orientation|keyboardHidden"
                 android:label="@string/revolt_control" />
 
         <activity

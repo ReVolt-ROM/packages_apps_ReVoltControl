@@ -15,6 +15,7 @@ import com.revolt.control.fragments.GeneralSettingsFragment;
 import com.revolt.control.fragments.HardwareKeysFragment;
 import com.revolt.control.fragments.NavigationDrawerFragment;
 import com.revolt.control.fragments.StatusbarSettingsFragment;
+import com.revolt.control.fragments.TogglesTabHostFragment;
 
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -47,6 +48,9 @@ public class MainActivity extends Activity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+        ActionBar bar = getActionBar();
+        bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
     }
 
     @Override
@@ -76,7 +80,7 @@ public class MainActivity extends Activity
                 break;
 
             case 3:
-                fragment = new ArrangeTogglesFragment();
+                fragment = new TogglesTabHostFragment();
                 break;
         }
         return fragment;
