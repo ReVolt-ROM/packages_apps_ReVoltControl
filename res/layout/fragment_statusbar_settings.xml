@@ -3,7 +3,7 @@
 
     <com.revolt.control.widgets.CategorySeparator
             style="@style/defaultSize"
-            android:title="@string/category_statusbar"/>
+            android:title="@string/category_statusbar_notification"/>
 
     <com.revolt.control.settings.CheckboxSetting
             android:layout_width="match_parent"
@@ -24,6 +24,19 @@
             android:key="show_statusbar_ime_switcher"
             android:defaultValue="true"
             />
+
+    <com.revolt.control.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:title="@string/vibrate_notif_expand_title"
+            android:summary="@string/vibrate_notif_expand_summary"
+            android:key="vibrate_notif_expand"
+            />
+
+    <com.revolt.control.widgets.CategorySeparator
+            style="@style/defaultSize"
+            android:title="@string/category_statusbar_battery"/>
 
     <com.revolt.control.settings.CheckboxSetting
             android:layout_width="match_parent"

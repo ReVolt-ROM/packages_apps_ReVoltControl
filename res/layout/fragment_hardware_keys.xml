@@ -7,10 +7,6 @@
 
     <LinearLayout style="@style/settingsFragmentStyle">
 
-        <com.revolt.control.widgets.CategorySeparator
-                android:title="@string/category_hardware_keys"
-                style="@style/defaultSize"/>
-
         <com.revolt.control.settings.CheckboxSetting
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
