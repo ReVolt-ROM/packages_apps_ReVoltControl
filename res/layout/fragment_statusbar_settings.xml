@@ -25,7 +25,7 @@
             android:defaultValue="true"
             />
 
-    <com.aokp.romcontrol.settings.CheckboxSetting
+    <com.revolt.control.settings.CheckboxSetting
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
@@ -35,7 +35,7 @@
             android:defaultValue="false"
             />
 
-    <com.aokp.romcontrol.settings.CheckboxSetting
+    <com.revolt.control.settings.CheckboxSetting
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
