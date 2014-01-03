@@ -18,6 +18,7 @@ import com.revolt.control.fragments.NavRingTargets;
 import com.revolt.control.fragments.NavigationDrawerFragment;
 import com.revolt.control.fragments.StatusbarSettingsFragment;
 import com.revolt.control.fragments.toggles.TogglesTabHostFragment;
+import com.aokp.romcontrol.fragments.navbar.NavbarTabHostFragment;
 
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -91,6 +92,10 @@ public class MainActivity extends Activity
 
             case 5:
                 fragment = new NavRingTargets();
+                break;
+
+            case 6:
+                fragment = new NavbarTabHostFragment();
                 break;
         }
         return fragment;
