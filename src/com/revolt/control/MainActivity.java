@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
-import com.revolt.control.fragments.ArrangeTogglesFragment;
 import com.revolt.control.fragments.GeneralSettingsFragment;
 import com.revolt.control.fragments.HardwareKeysFragment;
 import com.revolt.control.fragments.LockscreenSettingsFragment;
