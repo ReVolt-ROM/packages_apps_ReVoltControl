@@ -13,10 +13,11 @@ import android.view.MenuItem;
 import com.revolt.control.fragments.ArrangeTogglesFragment;
 import com.revolt.control.fragments.GeneralSettingsFragment;
 import com.revolt.control.fragments.HardwareKeysFragment;
+import com.revolt.control.fragments.LockscreenSettingsFragment;
 import com.revolt.control.fragments.NavRingTargets;
 import com.revolt.control.fragments.NavigationDrawerFragment;
 import com.revolt.control.fragments.StatusbarSettingsFragment;
-import com.revolt.control.fragments.TogglesTabHostFragment;
+import com.revolt.control.fragments.toggles.TogglesTabHostFragment;
 
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -77,14 +78,18 @@ public class MainActivity extends Activity
                 break;
 
             case 2:
-                fragment = new StatusbarSettingsFragment();
+                fragment = new LockscreenSettingsFragment();
                 break;
 
             case 3:
-                fragment = new TogglesTabHostFragment();
+                fragment = new StatusbarSettingsFragment();
                 break;
 
             case 4:
+                fragment = new TogglesTabHostFragment();
+                break;
+
+            case 5:
                 fragment = new NavRingTargets();
                 break;
         }

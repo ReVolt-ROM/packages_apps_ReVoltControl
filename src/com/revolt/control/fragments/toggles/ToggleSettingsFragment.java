@@ -1,4 +1,4 @@
-package com.revolt.control.fragments;
+package com.revolt.control.fragments.toggles;
 
 import android.app.Fragment;
 import android.os.Bundle;
