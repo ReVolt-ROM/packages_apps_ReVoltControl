@@ -18,6 +18,4 @@
         <item>@drawable/ic_revolt_navigation_ring</item>
         <item>@drawable/ic_revolt_navigation_bar</item>
     </string-array>
-
-    <string name="category_navbar">Navigation bar</string>
 </resources>
