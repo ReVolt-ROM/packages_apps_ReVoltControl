@@ -1,35 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/settingsFragmentStyle">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <com.revolt.control.widgets.CategorySeparator
-        style="@style/defaultSize"
-        android:title="@string/category_lockscreen"/>
 
-    <com.revolt.control.settings.CheckboxSetting
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <LinearLayout style="@style/settingsFragmentStyle">
 
-        android:title="@string/volume_wake_screen"
-        android:summary="@string/volume_wake_screen_summary"
-        android:key="volume_wake_screen"
-        />
+        <com.revolt.control.widgets.CategorySeparator
+                style="@style/defaultSize"
+                android:title="@string/category_lockscreen"
+                />
 
-    <com.revolt.control.settings.CheckboxSetting
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:title="@string/volume_music_controls"
-        android:summary="@string/volume_music_controls_summary"
-        android:key="volume_music_controls"
-        />
+        <com.revolt.control.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-    <com.revolt.control.settings.CheckboxSetting
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:title="@string/lockscreen_see_through"
-        android:summary="@string/lockscreen_see_through_summary"
-        android:key="lockscreen_see_through"
-        />
+                android:title="@string/volume_wake_screen"
+                android:summary="@string/volume_wake_screen_summary"
+                android:key="volume_wake_screen"
+                />
 
-</LinearLayout>
+        <com.revolt.control.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="@string/volume_music_controls"
+                android:summary="@string/volume_music_controls_summary"
+                android:key="volume_music_controls"
+                />
+
+        <com.revolt.control.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="@string/lockscreen_see_through"
+                android:summary="@string/lockscreen_see_through_summary"
+                android:key="lockscreen_see_through"
+                />
+
+        <com.revolt.control.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="@string/lockscreen_minimize_challenge_title"
+                android:summary="@string/lockscreen_minimize_challenge_summary"
+                android:key="lockscreen_minimize_lockscreen_challenge"
+                />
+
+    </LinearLayout>
+
+</ScrollView>
