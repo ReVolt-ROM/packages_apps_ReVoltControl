@@ -29,15 +29,15 @@ public class StatusbarSettingsFragment extends Fragment implements OnSettingChan
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        mBatteryIndicator.setOnSettingChangedListener(this);
-    }
-
-    @Override
-    public void onSettingChanged(String table, String key, String oldValue, String value) {
-        if ("revolt".equals(table)) {
-            mBatteryIndicatorPlugged.setVisibility(mBatteryIndicator.isChecked() ? View.VISIBLE : View.GONE);
-        }
-    }
+ +    public void onViewCreated(View view, Bundle savedInstanceState) {
+ +        super.onViewCreated(view, savedInstanceState);
+ +        mBatteryIndicator.setOnSettingChangedListener(this);
+ +    }
+ +
+ +    @Override
+ +    public void onSettingChanged(String table, String key, String oldValue, String value) {
+ +        if ("aokp".equals(table)) {
+ +            mBatteryIndicatorPlugged.setVisibility(mBatteryIndicator.isChecked() ? View.VISIBLE : View.GONE);
+ +        }
+ +    }
 }
