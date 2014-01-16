@@ -90,11 +90,15 @@ public class MainActivity extends Activity
                 break;
 
             case 5:
-                fragment = new NavRingTargets();
+                fragment = new HardwareKeysFragment();
                 break;
 
             case 6:
                 fragment = new NavbarTabHostFragment();
+                break;
+
+            case 7:
+                fragment = new NavRingTargets();
                 break;
         }
         return fragment;
