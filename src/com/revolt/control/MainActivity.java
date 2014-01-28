@@ -10,14 +10,16 @@ import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
-import com.revolt.control.fragments.GeneralSettingsFragment;
+
+import com.revoltcontrol.fragments.GeneralSettingsFragment;
 import com.revolt.control.fragments.HardwareKeysFragment;
 import com.revolt.control.fragments.LockscreenSettingsFragment;
 import com.revolt.control.fragments.NavRingTargets;
 import com.revolt.control.fragments.NavigationDrawerFragment;
 import com.revolt.control.fragments.StatusbarSettingsFragment;
-import com.revolt.control.fragments.toggles.TogglesTabHostFragment;
 import com.revolt.control.fragments.navbar.NavbarTabHostFragment;
+import com.revolt.control.fragments.toggles.TogglesTabHostFragment;
+import com.revolt.control.fragments.SoundSettingsFragment;
 
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -99,6 +101,10 @@ public class MainActivity extends Activity
 
             case 7:
                 fragment = new NavRingTargets();
+                break;
+
+            case 8:
+                fragment = new SoundSettingsFragment();
                 break;
         }
         return fragment;

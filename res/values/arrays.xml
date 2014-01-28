@@ -8,7 +8,7 @@
         <item>@string/category_hardware_keys</item>
         <item>@string/category_navbar</item>
         <item>@string/category_navring</item>
-        <item>@string/category_installer</item>
+        <item>@string/category_sound</item>
     </string-array>
     <string-array name="navigation_drawer_icons">
         <item>@drawable/ic_revolt_general</item>
@@ -18,5 +18,6 @@
         <item>@drawable/ic_revolt_hardware_keys</item>
         <item>@drawable/ic_revolt_navigation_bar</item>
         <item>@drawable/ic_revolt_navigation_ring</item>
+        <item>@drawable/ic_revolt__sound</item>
     </string-array>
 </resources>
