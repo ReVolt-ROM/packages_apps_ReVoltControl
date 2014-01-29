@@ -16,6 +16,7 @@ import com.revolt.control.fragments.HardwareKeysFragment;
 import com.revolt.control.fragments.LockscreenSettingsFragment;
 import com.revolt.control.fragments.NavRingTargets;
 import com.revolt.control.fragments.NavigationDrawerFragment;
+import com.revolt.control.fragments.PowerMenuSettingsFragment;
 import com.revolt.control.fragments.StatusbarSettingsFragment;
 import com.revolt.control.fragments.navbar.NavbarTabHostFragment;
 import com.revolt.control.fragments.toggles.TogglesTabHostFragment;
@@ -96,14 +97,18 @@ public class MainActivity extends Activity
                 break;
 
             case 6:
-                fragment = new NavbarTabHostFragment();
+                fragment = new PowerMenuSettingsFragment();
                 break;
 
             case 7:
-                fragment = new NavRingTargets();
+                fragment = new NavbarTabHostFragment();
                 break;
 
             case 8:
+                fragment = new NavRingTargets();
+                break;
+
+            case 9:
                 fragment = new SoundSettingsFragment();
                 break;
         }
