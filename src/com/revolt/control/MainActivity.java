@@ -11,7 +11,9 @@ import android.provider.Settings;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
+import com.revolt.control.fragments.AnimationsFragment;
 import com.revolt.control.fragments.GeneralSettingsFragment;
 import com.revolt.control.fragments.HardwareKeysFragment;
 import com.revolt.control.fragments.LockscreenSettingsFragment;
@@ -117,6 +119,10 @@ public class MainActivity extends Activity
 
             case 10:
                 fragment = new RibbonsFragment();
+                break;
+
+            case 11:
+                fragment = new AnimationsFragment();
                 break;
         }
         return fragment;
