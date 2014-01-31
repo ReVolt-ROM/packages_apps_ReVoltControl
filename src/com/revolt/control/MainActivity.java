@@ -121,7 +121,7 @@ public class MainActivity extends Activity
                 fragment = new RibbonsFragment();
                 break;
 
-            case 11:
+            case 11;
                 fragment = new AnimationsFragment();
                 break;
         }
