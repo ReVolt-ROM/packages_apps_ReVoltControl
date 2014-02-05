@@ -21,7 +21,7 @@ import com.android.internal.util.aokp.AokpRibbonHelper;
 import com.android.internal.util.aokp.AwesomeAnimationHelper;
 import com.android.internal.util.aokp.AwesomeConstants;
 import com.android.internal.util.aokp.NavRingHelpers;
-import com.revoltcontrol.R;
+import com.revolt.control.R;
 import com.revolt.control.settings.CheckboxSetting;
 import com.revolt.control.settings.ColorPickerSetting;
 import com.revolt.control.settings.SingleChoiceSetting;
