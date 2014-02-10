@@ -23,57 +23,6 @@
     <!-- Menu Items -->
     <string name="menu_show_drawer_icon">Show in app drawer</string>
 
-    <!-- About -->
-    <string name="devs">The Crew</string>
-    <string name="aokp">Android Open Kang Project</string>
-    <string name="aokp_website_title">AOKP website</string>
-    <string name="aokp_website_summary">www.aokp.co - Find all newest releases here</string>
-    <string name="aokp_review_title">AOKP Code Review - Gerrit</string>
-    <string name="aokp_review_summary">View AOKP\'s Gerrit instance</string>
-    <string name="aokp_irc_title">Join us on IRC</string>
-    <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
-    <string name="about_aokp">About AOKP</string>
-    <string name="about_aokp_summary">@null</string>
-    <string name="donate_aokp">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG
-    </string>
-    <string name="github_aokp">https://github.com/AOKP</string>
-    <string name="github_adam">https://github.com/syaoran12</string>
-    <string name="github_akellar">https://github.com/akellar</string>
-    <string name="github_bajee11">https://github.com/Bajee11</string>
-    <string name="github_bmc08gt">https://github.com/BMc08GT</string>
-    <string name="github_birdman">https://github.com/mrbirdman</string>
-    <string name="github_championswimmer">https://github.com/championswimmer</string>
-    <string name="github_DAGr8">https://github.com/DAGr8</string>
-    <string name="github_dhacker29">https://github.com/dhacker29</string>
-    <string name="github_graffixnyc">https://github.com/graffixnyc</string>
-    <string name="github_hashcode">https://github.com/Hashcode</string>
-    <string name="github_willdeberry">https://github.com/willdeberry</string>
-    <string name="github_jbirdvegas">https://github.com/JBirdVegas</string>
-    <string name="github_k900">https://github.com/K900</string>
-    <string name="github_kecinzer">https://github.com/kecinzer</string>
-    <string name="github_khasmek">https://github.com/KhasMek</string>
-    <string name="github_kwes">https://github.com/kwes1020</string>
-    <string name="github_marclandis">https://github.com/MarcLandis</string>
-    <string name="github_rohan32">https://github.com/rohanmathur</string>
-    <string name="github_roman">https://github.com/romanbb</string>
-    <string name="github_protekk">https://github.com/ProTekk</string>
-    <string name="github_qnhoang81">https://github.com/qnhoang81</string>
-    <string name="github_scar45">https://github.com/scar45</string>
-    <string name="github_sethyx">https://github.com/sethyx</string>
-    <string name="github_sixstringsg">https://github.com/sixstringsg</string>
-    <string name="github_stevespear">https://github.com/Stevespear426</string>
-    <string name="github_tdm">https://github.com/tdm</string>
-    <string name="github_whitehawk">https://github.com/Whitehawkx</string>
-    <string name="github_xoom">https://github.com/xoomdev</string>
-    <string name="github_zaph">https://github.com/Zaphod-Beeblebrox</string>
-    <string name="url_aokp">http://aokp.co/</string>
-    <string name="url_aokp_gerrit">http://gerrit.aokp.co</string>
-    <string name="url_aokp_irc">http://webchat.freenode.net/?channels=teamkang</string>
-
-    <!-- dynamic changelog -->
-    <string name="mgerrit_changelog_title">mGerrit: Dynamic ChangeLog</string>
-    <string name="mgerrit_changelog_summary">Interactive changelog pulled live from our Gerrit instance</string>
-
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color picker</string>
     <string name="press_color_to_apply">Press on color to apply</string>
@@ -190,17 +139,6 @@
     <string name="status_bar_network_stats_update_summary">How often is indicator updated</string>
     <string name="status_bar_network_stats_color_title">Network speeds text color</string>
     <string name="status_bar_network_stats_color_summary">Network speeds text color in statusbar</string>
-
-    <!-- Installer -->
-    <string name="persist_options">Persistence</string>
-    <string name="persist_enable">Enable persistence</string>
-    <string name="persist_enable_summary">Enable data to persist across installs</string>
-    <string name="persist_prop_density">Persist density</string>
-    <string name="persist_prop_density_summary">Persist LCD density</string>
-    <string name="persist_file_hosts">Persist hosts</string>
-    <string name="persist_file_hosts_summary">Persist hosts file</string>
-    <string name="persist_file_xposed">Persist Xposed</string>
-    <string name="persist_file_xposed_summary">Persist file app_process for Xposed framework</string>
 
     <!-- Ribbons -->
     <string name="toggles_ribbon_instructions">Rearrange by dragging by the handle on the right. Remove by swiping.</string>
