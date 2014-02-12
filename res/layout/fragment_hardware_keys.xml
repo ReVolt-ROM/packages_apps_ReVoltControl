@@ -14,6 +14,7 @@
                 android:title="@string/title_setting_enable_custom_hardware_keys"
                 android:summary="@string/summary_setting_enable_custom_hardware_keys"
                 android:key="hardware_key_rebinding"
+                android:defaultValue="false"
                 />
 
         <com.revolt.control.settings.SingleChoiceSetting
