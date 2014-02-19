@@ -39,6 +39,14 @@
     <string name="revolt_rom_project" translatable="false">The ReVolt ROM Project</string>
     <string name="members">Members</string>
 
+    <!--Battery Icon selection-->
+    <string name="battery_status_icon_title">Status icon</string>
+    <string name="battery_bar_nopercent">Battery bar</string>
+    <string name="battery_bar_percent">Battery bar &amp; percent</string>
+    <string name="battery_bar">Battery bar</string>
+    <string name="battery_circle">Battery circle</string>
+    <string name="battery_circle_percent">Battery circle &amp; percent</string>
+
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color picker</string>
     <string name="press_color_to_apply">Press on color to apply</string>
