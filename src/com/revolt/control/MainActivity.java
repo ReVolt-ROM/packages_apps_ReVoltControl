@@ -17,6 +17,7 @@ import com.revolt.control.fragments.about.AboutTabHostFragment;
 import com.revolt.control.fragments.AnimationsFragment;
 import com.revolt.control.fragments.GeneralSettingsFragment;
 import com.revolt.control.fragments.HardwareKeysFragment;
+import com.revolt.control.fragments.LedSettingsFragment;
 import com.revolt.control.fragments.LockscreenSettingsFragment;
 import com.revolt.control.fragments.NavRingTargets;
 import com.revolt.control.fragments.NavigationDrawerFragment;
@@ -124,6 +125,10 @@ public class MainActivity extends Activity
 
             case 11:
                 fragment = new AnimationsFragment();
+                break;
+
+            case 12:
+                fragment = new LedSettingsFragment();
                 break;
         }
         return fragment;
