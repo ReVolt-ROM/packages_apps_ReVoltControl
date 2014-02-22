@@ -80,7 +80,7 @@
     <string name="arrow_right">→</string>
     <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
-    <string name="hex_hint">#FF000000</string>
+    <string name="hex_hint" translatable="false">#FF000000</string>
     <string name="set">Set</string>
     <string name="default_color">Default</string>
 
