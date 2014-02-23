@@ -15,7 +15,7 @@
             android:gravity="center"
             android:text="@string/ribbon_size_title"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#FFFFFF" />
+            android:textColor="@android:color/holo_blue_light" />
 
         <SeekBar
             android:id="@+id/ribbon_size"
