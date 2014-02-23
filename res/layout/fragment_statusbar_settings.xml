@@ -213,6 +213,16 @@
                 android:key="statusbar_hide_signal_bars"
                 />
 
+        <com.revolt.control.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:title="@string/show_4g_for_lte_title"
+                android:summary="@string/show_4g_for_lte_summary"
+                android:key="statusbar_signal_show_4g_for_lte"
+                android:defaultValue="false"
+                />
+
         <com.revolt.control.widgets.CategorySeparator
                 style="@style/defaultSize"
                 android:title="@string/status_bar_network_title"/>
