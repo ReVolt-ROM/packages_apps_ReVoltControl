@@ -89,6 +89,7 @@
 
                 android:entries="@array/statusbar_clock_am_pm_styleEntries"
                 android:entryValues="@array/statusbar_clock_am_pm_styleValues"
+                android:defaultValue="2"
                 />
 
         <com.revolt.control.settings.SingleChoiceSetting
@@ -102,6 +103,7 @@
 
                 android:entries="@array/statusbar_clock_styleEntries"
                 android:entryValues="@array/statusbar_clock_styleValues"
+                android:defaultValue="1"
                 />
 
         <com.revolt.control.settings.SingleChoiceSetting
@@ -115,6 +117,7 @@
 
                 android:entries="@array/statusbar_clock_weekdayEntries"
                 android:entryValues="@array/statusbar_clock_weekdayValues"
+                android:defaultValue="0"
                 />
 
         <com.revolt.control.settings.ColorPickerSetting
@@ -221,6 +224,7 @@
 
                 android:entries="@array/entries_status_bar_network_stats_update"
                 android:entryValues="@array/values_status_bar_network_stats_update"
+                android:defaultValue="500"
                 />
 
     </LinearLayout>

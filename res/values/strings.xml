@@ -29,7 +29,7 @@
     <string name="arrow_right">→</string>
     <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
-    <string name="hex_hint">#FF000000</string>
+    <string name="hex_hint" translatable="false">#FF000000</string>
     <string name="set">Set</string>
     <string name="default_color">Default</string>
 
@@ -165,6 +165,7 @@
     <string name="hide_ribbon_timeout_15000">15 Sec</string>
     <string name="hide_ribbon_timeout_30000">30 Sec</string>
 
+    <string name="icon_gravity_title">Icon gravity</string>
     <string name="ribbon_drag_handle_width_title">Swipe area width</string>
     <string name="ribbon_drag_handle_height_title">Swipe area height</string>
     <string name="ribbon_handle_color_title">Swipe area color</string>
@@ -220,6 +221,10 @@
 
     <string name="toggle_screenshot_delay_title">Screenshot delay</string>
     <string name="toggle_screenshot_delay_summary">Delay for screenshot toggle to send intent to capture screen</string>
+
+    <!-- Navigation Bar -->
+    <string name="enable_navigation_bar_title">Enable navigation bar</string>
+    <string name="enable_navigation_bar_summary">Enable the on-screen navigation bar</string>
 
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigation ring targets</string>
@@ -289,9 +294,14 @@
     <string name="lockscreen_see_through">Transparent lockscreen</string>
     <string name="lockscreen_see_through_summary">Shows the content behind your lockscreen, your data may be visible to those around you</string>
 
+    <string name="battery_arc_lockscreen_handle">Battery arc handle</string>
+    <string name="battery_arc_lockscreen_handle_summary">An arc around the lockscreen handle representing battery level</string>
+
     <!-- Sound -->
     <string name="safe_headset_volume_title">Safe headset volume</string>
     <string name="safe_headset_volume_summary">Whether safe headset volume warning is shown</string>
+    <string name="volume_adjust_sounds_enable_title">Volume adjust sound</string>
+    <string name="volume_adjust_sounds_enable_summary">Play sound when adjusting volume with hard keys</string>
 
     <!-- Power Menu -->
     <string name="airplane_mode_options">Airplane mode</string>
