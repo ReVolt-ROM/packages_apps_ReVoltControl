@@ -37,7 +37,7 @@
                     android:layout_marginLeft="8dip"
                     android:singleLine="true"
                     android:ellipsize="end"
-                    android:textColor="@android:color/holo_blue_light"
+                    android:textColor="@android:color/white"
                     android:textAppearance="?android:attr/textAppearanceMedium"/>
 
             <ImageView

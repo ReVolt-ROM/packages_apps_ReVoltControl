@@ -70,7 +70,7 @@
                 android:gravity="center_horizontal|left"
                 android:text="@string/ribbon_handle_color_title"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#FFFFFF" />
+                android:textColor="@android:color/black" />
 
             <ImageView
                 android:id="@+id/handle_color"
@@ -91,7 +91,7 @@
             android:gravity="center"
             android:text="@string/ribbon_drag_handle_height_title"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#FFFFFF" />
+            android:textColor="@android:color/black" />
 
         <SeekBar
             android:id="@+id/drag_handle_width"
@@ -112,7 +112,7 @@
             android:gravity="center"
             android:text="@string/ribbon_drag_handle_width_title"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#FFFFFF" />
+            android:textColor="@android:color/black" />
 
         <SeekBar
             android:id="@+id/drag_handle_height"
@@ -142,7 +142,7 @@
                 android:gravity="center_horizontal|left"
                 android:text="@string/ribbon_color_title"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#FFFFFF" />
+                android:textColor="@android:color/black" />
 
             <ImageView
                 android:id="@+id/ribbon_color"
@@ -169,7 +169,7 @@
             android:gravity="center"
             android:text="@string/animation_duration_title"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#FFFFFF" />
+            android:textColor="@android:color/black" />
 
         <SeekBar
             android:id="@+id/animation_duration"
@@ -190,7 +190,7 @@
             android:gravity="center"
             android:text="@string/ribbon_size_title"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#FFFFFF" />
+            android:textColor="@android:color/black" />
 
         <SeekBar
             android:id="@+id/ribbon_size"
@@ -211,7 +211,7 @@
             android:gravity="center"
             android:text="@string/ribbon_space_title"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#FFFFFF" />
+            android:textColor="@android:color/black" />
 
         <SeekBar
             android:id="@+id/ribbon_space"

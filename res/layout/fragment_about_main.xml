@@ -11,9 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="48dip"
         android:background="@drawable/background_tab"
-        android:textColor="@android:color/holo_blue_light"
-        revolt:dividerColor="@android:color/holo_blue_light"
-        revolt:indicatorColor="@android:color/holo_blue_light" />
+        android:textColor="@android:color/black"
+        revolt:dividerColor="@android:color/black"
+        revolt:indicatorColor="@android:color/black" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"

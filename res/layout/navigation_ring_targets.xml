@@ -55,7 +55,7 @@
             android:padding="5dp"
             android:text="@string/navring_target_info"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             android:textStyle="italic" />
 
         <com.android.internal.widget.multiwaveview.GlowPadView

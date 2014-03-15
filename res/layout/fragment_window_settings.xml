@@ -24,7 +24,7 @@
                 android:gravity="center_horizontal|left"
                 android:text="@string/window_color_title"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#FFFFFF" />
+                android:textColor="@android:color/black" />
 
             <ImageView
                 android:id="@+id/window_color"
@@ -51,7 +51,7 @@
             android:gravity="center"
             android:text="@string/animation_duration_title"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#FFFFFF" />
+            android:textColor="@android:color/black" />
 
         <SeekBar
             android:id="@+id/animation_duration"
@@ -72,7 +72,7 @@
             android:gravity="center"
             android:text="@string/window_size_title"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#FFFFFF" />
+            android:textColor="@android:color/black" />
 
         <SeekBar
             android:id="@+id/window_size"
@@ -93,7 +93,7 @@
             android:gravity="center"
             android:text="@string/window_space_title"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#FFFFFF" />
+            android:textColor="@android:color/black" />
 
         <SeekBar
             android:id="@+id/window_space"

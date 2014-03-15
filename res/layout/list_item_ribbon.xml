@@ -50,6 +50,6 @@
             android:paddingBottom="8dp"
             android:paddingTop="8dp"
             android:paddingRight="8dp"
-            android:color="#999999" />
+            android:color="@android:color/black" />
 
 </LinearLayout>

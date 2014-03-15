@@ -123,7 +123,7 @@
             android:gravity="center"
             android:text="@string/animation_duration_title"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#FFFFFF" />
+            android:textColor="@android:color/black" />
 
         <SeekBar
             android:id="@+id/animation_duration"
