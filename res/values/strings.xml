@@ -36,6 +36,7 @@
     <string name="github_johnhany97" translatable="false">https://github.com/johnhany97</string>
     <string name="url_revolt" translatable="false">http://www.revolt-rom.com/</string>
     <string name="revolt_rom_project" translatable="false">The ReVolt ROM Project</string>
+    <string name="members">Members</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color picker</string>

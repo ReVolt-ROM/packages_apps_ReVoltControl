@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.revolt.control.fragments.about.AboutTabHostFragment;
 import com.revolt.control.fragments.AnimationsFragment;
 import com.revolt.control.fragments.GeneralSettingsFragment;
 import com.revolt.control.fragments.HardwareKeysFragment;
@@ -78,46 +79,50 @@ public class MainActivity extends Activity
         Fragment fragment = null;
         switch (position) {
             case 0:
-                fragment = new GeneralSettingsFragment();
+                fragment = new AboutTabHostFragment();
                 break;
 
             case 1:
-                fragment = new LockscreenSettingsFragment();
+                fragment = new GeneralSettingsFragment();
                 break;
 
             case 2:
-                fragment = new StatusbarSettingsFragment();
+                fragment = new LockscreenSettingsFragment();
                 break;
 
             case 3:
-                fragment = new TogglesTabHostFragment();
+                fragment = new StatusbarSettingsFragment();
                 break;
 
             case 4:
-                fragment = new HardwareKeysFragment();
+                fragment = new TogglesTabHostFragment();
                 break;
 
             case 5:
-                fragment = new PowerMenuSettingsFragment();
+                fragment = new HardwareKeysFragment();
                 break;
 
             case 6:
-                fragment = new NavbarTabHostFragment();
+                fragment = new PowerMenuSettingsFragment();
                 break;
 
             case 7:
-                fragment = new NavRingTargets();
+                fragment = new NavbarTabHostFragment();
                 break;
 
             case 8:
-                fragment = new SoundSettingsFragment();
+                fragment = new NavRingTargets();
                 break;
 
             case 9:
-                fragment = new RibbonsFragment();
+                fragment = new SoundSettingsFragment();
                 break;
 
             case 10:
+                fragment = new RibbonsFragment();
+                break;
+
+            case 11:
                 fragment = new AnimationsFragment();
                 break;
         }
