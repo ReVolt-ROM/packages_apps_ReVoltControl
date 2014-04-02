@@ -23,6 +23,20 @@
     <!-- Menu Items -->
     <string name="menu_show_drawer_icon">Show in app drawer</string>
 
+    <!-- About -->
+    <string name="devs">Team Members</string>
+    <string name="revolt" translatable="false">The ReVolt ROM Project</string>
+    <string name="revolt_website_title">ReVolt website</string>
+    <string name="revolt_website_summary">www.revolt-rom.com - Find all newest releases here</string>
+    <string name="about_revolt">About ReVolt</string>
+    <string name="about_revolt_summary">@null</string>
+    <string name="donate_revolt" translatable="false">http://forum.xda-developers.com/donatetome.php?u=4655909
+    </string>
+    <string name="github_revolt" translatable="false">https://github.com/ReVolt-ROM</string>
+    <string name="github_johnhany97" translatable="false">https://github.com/johnhany97</string>
+    <string name="url_revolt" translatable="false">http://www.revolt-rom.com/</string>
+    <string name="revolt_rom_project" translatable="false">The ReVolt ROM Project</string>
+
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color picker</string>
     <string name="press_color_to_apply">Press on color to apply</string>
