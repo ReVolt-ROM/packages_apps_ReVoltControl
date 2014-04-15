@@ -11,9 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.revolt.control.R;
 
-public class AboutCrewFragment extends Fragment {
+public class AboutMembersFragment extends Fragment {
 
-    public AboutCrewFragment() {
+    public AboutMembersFragment() {
         // empty fragment constructor
     }
 
