@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="navigation_drawer_entries" translatable="false">
-        <item>@string/category_about</item>
+        <item>@string/category_about_revolt</item>
         <item>@string/category_general</item>
         <item>@string/category_lockscreen</item>
         <item>@string/category_statusbar</item>
