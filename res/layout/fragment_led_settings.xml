@@ -7,7 +7,7 @@
 
     <LinearLayout style="@style/settingsFragmentStyle">
 
-         <com.aokp.romcontrol.settings.CheckboxSetting
+         <com.revolt.control.settings.CheckboxSetting
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/setting_toggle_charging_led"
