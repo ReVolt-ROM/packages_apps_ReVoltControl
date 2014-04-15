@@ -36,8 +36,8 @@ public class NavbarSettingsFragment extends Fragment implements OnSettingChanged
         View v = inflater.inflate(R.layout.fragment_navbar_settings, container, false);
 
             mToggleNavbar = (CheckboxSetting) v.findViewById(R.id.setting_toggle_navbar);
-            mToggleNavbar.setChecked(Settings.AOKP.getBoolean(getActivity().getContentResolver(),
-                    Settings.AOKP.ENABLE_NAVIGATION_BAR, hasNavbar));
+            mToggleNavbar.setChecked(Settings.REVOLT.getBoolean(getActivity().getContentResolver(),
+                    Settings.REVOLT.ENABLE_NAVIGATION_BAR, hasNavbar));
 
         return v;
     }
