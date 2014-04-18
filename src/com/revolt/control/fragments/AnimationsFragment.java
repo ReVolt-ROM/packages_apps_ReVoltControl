@@ -120,7 +120,8 @@ public class AnimationsFragment extends Fragment implements OnSeekBarChangeListe
         mWallpaperIntraOpen.updateSummary();
 
         mDuration = (SeekBar) main.findViewById(R.id.animation_duration);
-        mDuration.setProgress(Settings.REVOLT.getInt(mContext.getContentResolver(), Settings.REVOLT.ANIMATION_CONTROLS_DURATION, 50));
+        mDuration.setProgress(Settings.REVOLT.getInt(mContext.getContentResolver(), Settings.REVOLT.ANIMATION_CONTROLS_DURATION, 25));
+
         mDuration.setOnSeekBarChangeListener(this);
 
         return main;
