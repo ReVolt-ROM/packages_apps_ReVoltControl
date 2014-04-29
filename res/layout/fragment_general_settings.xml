@@ -20,4 +20,15 @@
             android:key="wakeup_when_plugged_unplugged"
             android:defaultValue="true"
             />
+
+    <com.revolt.control.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:title="@string/peek_title"
+            android:summary="@string/peek_summary"
+            android:key="peek_state"
+            android:defaultValue="false"
+            />
+
 </LinearLayout>

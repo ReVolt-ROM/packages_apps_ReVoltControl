@@ -361,4 +361,8 @@
     <string name="enable_charging_led_title">Enable charging LED</string>
     <string name="enable_charging_led_summary">The LED is used as charging indicator</string>
 
+    <!-- Peek -->
+    <string name="peek_title">Notification peek</string>
+    <string name="peek_summary">Show latest notification after picking up your device</string>
+
 </resources>
