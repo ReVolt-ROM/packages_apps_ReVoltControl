@@ -277,7 +277,7 @@
             android:layout_height="wrap_content"
             revolt:colorPickerShowAlphaSlider="false"  />
 
-        <com.revoltcontrol.settings.ColorPickerSetting
+        <com.revolt.control.settings.ColorPickerSetting
             android:id="@+id/progressbar_color_4"
             android:key="progressbar_color_4"
             android:title="@string/progressbar_color_4_title"
