@@ -36,7 +36,7 @@
                 android:defaultValue="1"
                 />
 
-        <com.revolt.ontrol.settings.SingleChoiceSetting
+        <com.revolt.control.settings.SingleChoiceSetting
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/setting_screenshot_mode_options"
