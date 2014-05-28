@@ -170,6 +170,21 @@
 
         <com.revolt.control.widgets.CategorySeparator
             style="@style/defaultSize"
+            android:title="@string/crt_title" />
+
+        <com.revolt.control.settings.SingleChoiceSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:key="system_power_crt_mode"
+            android:dialogTitle="@string/system_power_crt_mode_dialog_title"
+            android:title="@string/system_power_crt_mode_title"
+            android:entries="@array/entries_system_power_crt_mode"
+            android:entryValues="@array/values_system_power_crt_mode"
+            android:defaultValue="1" />
+
+        <com.revolt.control.widgets.CategorySeparator
+            style="@style/defaultSize"
             android:title="@string/progressbar_title" />
 
         <com.revolt.control.settings.CheckboxSetting
