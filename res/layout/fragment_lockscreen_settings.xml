@@ -95,6 +95,13 @@
                 android:defaultValue="true"
                 />
 
+        <com.revolt.control.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:key="lockscreen_rotation"
+                android:title="@string/display_lockscreen_rotation_title"
+                />
+
         <com.revolt.control.widgets.CategorySeparator
                 style="@style/defaultSize"
                 android:title="@string/lockscreen_notifications"
