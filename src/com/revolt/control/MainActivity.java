@@ -27,6 +27,8 @@ import com.revolt.control.fragments.StatusbarSettingsFragment;
 import com.revolt.control.fragments.navbar.NavbarTabHostFragment;
 import com.revolt.control.fragments.toggles.TogglesTabHostFragment;
 import com.revolt.control.fragments.SoundSettingsFragment;
+import com.revolt.control.fragments.AutoImmersiveSettingsFragment;
+import com.revolt.control.fragments.HeadsUpSettingsFragment;
 
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -130,6 +132,11 @@ public class MainActivity extends Activity
             case 12:
                 fragment = new LedSettingsFragment();
                 break;
+
+            case 13:
+                fragment = new HeadsUpSettingsFragment();
+                break;
+
         }
         return fragment;
     }

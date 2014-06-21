@@ -14,6 +14,7 @@
         <item>@string/category_ribbons</item>
         <item>@string/category_animations</item>
         <item>@string/category_led</item>
+        <item>@string/category_headsup</item>
     </string-array>
     <string-array name="navigation_drawer_icons" translatable="false">
         <item>@drawable/ic_revolt_about</item>
@@ -29,5 +30,6 @@
         <item>@drawable/ic_revolt_ribbon</item>
         <item>@drawable/ic_revolt_animations</item>
         <item>@drawable/ic_revolt_led</item>
+        <item>@drawable/ic_revolt_headsup</item>
     </string-array>
 </resources>
