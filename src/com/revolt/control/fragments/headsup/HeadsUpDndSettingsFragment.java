@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.revolt.control.fragments;
+package com.revolt.control.fragments.headsup;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -40,7 +40,7 @@ import com.google.android.apps.dashclock.ui.SwipeDismissListViewTouchListener;
 
 import java.util.ArrayList;
 
-public class HeadsUpSettingsFragment extends Fragment {
+public class HeadsUpDndSettingsFragment extends Fragment {
 
     private Context mContext;
 
@@ -48,7 +48,7 @@ public class HeadsUpSettingsFragment extends Fragment {
     private ArrayList<String> appsNameList = new ArrayList<String>();
     private ArrayAdapter<String> mArrayAdapter;
 
-    public HeadsUpSettingsFragment() {
+    public HeadsUpDndSettingsFragment() {
 
     }
 
@@ -60,7 +60,7 @@ public class HeadsUpSettingsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_headsup_settings, container, false);
+        View v = inflater.inflate(R.layout.fragment_headsup_dnd_settings, container, false);
         mContext = getActivity();
         appsPackageList = Settings.REVOLT.getArrayList(mContext.getContentResolver(),
                 Settings.REVOLT.HEADS_UP_CUSTOM_VALUES);
