@@ -27,7 +27,6 @@ import com.revolt.control.fragments.StatusbarSettingsFragment;
 import com.revolt.control.fragments.navbar.NavbarTabHostFragment;
 import com.revolt.control.fragments.toggles.TogglesTabHostFragment;
 import com.revolt.control.fragments.SoundSettingsFragment;
-import com.revolt.control.fragments.AutoImmersiveSettingsFragment;
 import com.revolt.control.fragments.headsup.HeadsUpTabHostFragment;
 
 public class MainActivity extends Activity
