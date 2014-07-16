@@ -1,4 +1,4 @@
-package com.aokp.romcontrol.settings;
+package com.revolt.control.settings;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -6,14 +6,14 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Switch;
-import com.aokp.romcontrol.R;
+import com.revolt.control.R;
 
 /**
  * Setting toggle which represents a boolean value
  * <p/>
  * <ul><b>Supported attributes (in addition to {@link BaseSetting} attributes)</b>
- * <li>aokp:descriptionOn - a @string reference, which will be set as the summary when enabled.
- * <li>aokp:descriptionOff - a @string reference, which will be set as the summary when disabled.
+ * <li>revolt:descriptionOn - a @string reference, which will be set as the summary when enabled.
+ * <li>revolt:descriptionOff - a @string reference, which will be set as the summary when disabled.
  * </ul>
  */
 public class SwitchSetting extends BaseSetting implements OnClickListener {
