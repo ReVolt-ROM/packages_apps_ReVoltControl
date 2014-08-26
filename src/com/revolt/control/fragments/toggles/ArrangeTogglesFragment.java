@@ -30,6 +30,7 @@ import com.google.android.apps.dashclock.ui.DragGripView;
 import com.google.android.apps.dashclock.ui.SwipeDismissListViewTouchListener;
 import com.mobeta.android.dslv.DragSortController;
 import com.mobeta.android.dslv.DragSortListView;
+import com.faizmalkani.floatingactionbutton.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -143,6 +144,8 @@ public class ArrangeTogglesFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+        Fab mFab = (Fab)findViewById(R.id.fabbutton);
+        mFab.setOnClickListener(showAddTogglesDialog());
     }
 
     @Override
