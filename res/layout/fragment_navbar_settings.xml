@@ -17,7 +17,7 @@
                 android:defaultValue="false"
                 />
 
-        <com.revoltcontrol.settings.SingleChoiceSetting
+        <com.revolt.control.settings.SingleChoiceSetting
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/navigation_bar_height"
