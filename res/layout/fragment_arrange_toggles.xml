@@ -34,13 +34,5 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"/>
-    
-    <com.faizmalkani.floatingactionbutton.sample.Fab
-        android:id="@+id/fabbutton"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:layout_gravity="bottom|right"
-        android:layout_marginBottom="16dp"
-        android:layout_marginRight="16dp" />
 
 </LinearLayout>
